@@ -1,4 +1,6 @@
 package PatientManagment;
+//test update
+
  /**
     *This class can add appointments, add patients to the system, and change the status of the patient */
 public class Secretary extends User{
