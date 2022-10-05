@@ -3,17 +3,14 @@ import java.sql.Date;
 import java.util.ArrayList;
 /**
     * This class will be assigned to a location and be able to alter diagnosis and add a perscription*/
-public class Doctor extends User{ 
-    private String name;
-    private int empID;
-    private Location location;
-    //private ArrayList <Patient> patientList; I think it would be better to treat the location as a seperate model and store the list of patients there
-    private ArrayList<Date> futureAppointments;
+public class Doctor extends Employee{ 
 
+    private ArrayList<Date> futureAppointments;
     
-    public Doctor(String username, String password, String email, String phoneNum, UserType type) {
-        super(username, password, email, phoneNum, type);
+    public Doctor(String username, String password, String email, String phoneNum, UserType type, String name, int empID, Location location) {
+        super(username, password, email, phoneNum, type, name, empID, location); 
     }
+
     
     public void addDiagnosis() {} /** 
     * Adds the diagnosis to the patient */
@@ -90,16 +87,5 @@ public class Doctor extends User{
     public void setLocation(Location location) {
         this.location = location;
     }
-
-    // public ArrayList<Patient> getPatientList()
-    // {
-	// 	return this.patientList;
-	// }
-
-    // public void setPatientList (ArrayList<Patient> patientList)
-    // {
-	// 	this.patientList = patientList;
-	// }
-
     
 }

@@ -1,16 +1,13 @@
 package PatientManagment;
  /**
     *This class is located at a pharmacy or hospital, and can view perscriptions and edit them */
-public class Pharm extends User{
+public class Pharm extends Employee{
 
-    private String name;
-    private int empID;
-    private Location location;
-    // private ArrayList <Patient> patientList;
-    
-    public Pharm(String username, String password, String email, String phoneNum, UserType type) {
-        super(username, password, email, phoneNum, type);
+    public Pharm(String username, String password, String email, String phoneNum, UserType type, String name, int empID, Location location) {
+        super(username, password, email, phoneNum, type, name, empID, location);
+        //TODO Auto-generated constructor stub
     }
+
 
     public void viewPrescription() {} /** 
     * Views perscription and alters status. May make perscriptions a class to add status to them */

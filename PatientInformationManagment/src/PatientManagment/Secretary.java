@@ -3,15 +3,12 @@ package PatientManagment;
 
  /**
     *This class can add appointments, add patients to the system, and change the status of the patient */
-public class Secretary extends User{
-    private String name;
-    private int empID;
-    private Location location; //Location will have a list of patients, Nurse is tied to single location
-    private UserType userType;
+public class Secretary extends Employee{
+ 
+    public Secretary(String username, String password, String email, String phoneNum, UserType type, String name,
+            int empID, Location location) {
+        super(username, password, email, phoneNum, type, name, empID, location);
 
-    
-    public Secretary(String username, String password, String email, String phoneNum, UserType type) {
-        super(username, password, email, phoneNum, type);
     }
 
     public void addAppointment() {} /**
@@ -22,22 +19,6 @@ public class Secretary extends User{
 
     public void addPatient() {} /** 
     * Adds patient to the location */
-    
-    
-    /** 
-     * @return UserType
-     */
-    public UserType getUserType() {
-        return this.userType;
-    }
-
-    
-    /** 
-     * @param userType
-     */
-    public void setUserType(UserType userType) {
-        this.userType = userType;
-    }
     
     /** 
      * @return String

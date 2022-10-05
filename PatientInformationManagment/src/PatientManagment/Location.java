@@ -15,6 +15,18 @@ public class Location {
 
 
 
+    public Location(String name, LocationType type, String address, ArrayList<Integer> rooms, ArrayList<Patient> patientList, ArrayList<Nurse> nurseList, ArrayList<Doctor> doctorList, ArrayList<Secretary> secretatyList, ArrayList<Pharm> pharmList) {
+        this.rooms = rooms;
+        this.patientList = patientList;
+        this.nurseList = nurseList;
+        this.doctorList = doctorList;
+        this.secretaryList = secretatyList;
+        this.pharmList = pharmList;
+        this.name = name;
+        this.type = type;
+        this.address = address;
+    }
+
     
     /** 
      * Gets rooms at location

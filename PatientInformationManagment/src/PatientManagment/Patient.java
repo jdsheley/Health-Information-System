@@ -3,11 +3,12 @@ import java.sql.Date;
 /**
     *This class is used as a model that holds all the patient information. The patient can also edit it's own insurance information and add a future appointment */
 public class Patient extends User{ 
+
     private String address;
     private Location pharm; // The pharmacy that they prefer already in system
     private Location gp; // The gp they use already in system
     private Location currentLoc; // Their current location and systme they are in. IE if they enter a hospital or different GP
-    private Location insurance; // Insurance provider, can be altered by get and set methods
+    private Insurance insurance;// Insurance provider, can be altered by get and set methods
     private String room; // Set by nurse
     private String symptoms; // Set by nurse
     private String heartRate; // Set by nurse
@@ -17,16 +18,29 @@ public class Patient extends User{
     private Status status; // Set by secretary  
     private Date futureAppointment; // Secretary set
     
-    public Patient(String username, String password, String email, String phoneNum, UserType type) {
-        super(username, password, email, phoneNum, type);
+
+    public Patient(String username, String password, String email, String phoneNum, UserType type, String name) {
+        super(username, password, email, phoneNum, type, name);
+
     }
     
     public void viewDiagnosis() {} /** 
     * View diagnosis from doctor */
-
+    
     public void viewPrescription() {} /** 
     * View Prescription */
     
+    public Insurance getInsurance() {
+        return this.insurance;
+    }
+
+    
+    /** 
+     * @param insurance
+     */
+    public void setInsurance(Insurance insurance) {
+        this.insurance = insurance;
+    }
     
     /** 
      * @return Status
@@ -41,22 +55,6 @@ public class Patient extends User{
      */
     public void setStatus(Status status) {
         this.status = status;
-    }
-
-    
-    /** 
-     * @return Location
-     */
-    public Location getInsurance() {
-        return this.insurance;
-    }
-
-    
-    /** 
-     * @param insurance
-     */
-    public void setInsurance(Location insurance) {
-        this.insurance = insurance;
     }
     
     

@@ -2,17 +2,38 @@ package PatientManagment;
  /**
     *This is the base class for a user in the system. This can be a patient or healthcare provider*/
 public class User {
-    private String username;
-    private String password;
-    private String email;
-    private String phoneNum;
-    private UserType type;
-
-
-    public User(String username, String password, String email, String phoneNum, UserType type) {
-
+    protected String username;
+    protected String password;
+    protected String email;
+    protected String phoneNum;
+    protected UserType type;
+    protected String name;
+    
+    public User(String username, String password, String email, String phoneNum, UserType type, String name) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.phoneNum = phoneNum;
+        this.type = type;
+        this.name = name;
     }
     
+    
+    /** 
+     * @return String
+     */
+    public String getName() {
+        return this.name;
+    }
+
+    
+    /** 
+     * @param name
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
     /** 
      * @return String
      */

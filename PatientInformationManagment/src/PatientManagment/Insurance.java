@@ -2,16 +2,14 @@ package PatientManagment;
 import java.util.ArrayList;
 /**
     *This class can view the payment information of the patient and the diagnosis */
-public class Insurance extends User{ 
-    private String name;
-    private int empID;
-    private Location location;
+public class Insurance extends Employee{ 
+   
     private ArrayList<Patient> patientList; // List of users with insurance
-
     
-    public Insurance(String username, String password, String email, String phoneNum, UserType type) {
-        super(username, password, email, phoneNum, type);
+    public Insurance(String username, String password, String email, String phoneNum, UserType type, String name, int empID, Location location) {
+        super(username, password, email, phoneNum, type, name, empID, location);
     }
+    
 
     public void viewBill() {} /**
     *View the bill of the patient */
