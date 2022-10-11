@@ -17,6 +17,7 @@ public class Doctor extends Employee{
     public void addDiagnosis(Patient patient) {
         String diagnosis = userIntput.addDiagnosis();
         patient.setDiagnosis(diagnosis);
+        System.out.println("Diagnosis is :" + diagnosis);
     }
 
     /** 
@@ -24,6 +25,7 @@ public class Doctor extends Employee{
     public void addPerscription(Patient patient) {
         String perscription = userIntput.addPerscription();
         patient.setPerscription(perscription);
+        System.out.println("Perscription is: " + perscription);
     } 
     
 
