@@ -1,19 +1,44 @@
 package PatientManagment;
+
+import java.util.ArrayList;
+
 /**
     * This class will be assigned to a locaiton and alter patient information like heartrate, and room number */
 public class Nurse  extends Employee{ 
+    
+    UserInput input = new UserInput();
 
     public Nurse(String username, String password, String email, String phoneNum, UserType type, String name, int empID,
             Location location) {
         super(username, password, email, phoneNum, type, name, empID, location);
-        //TODO Auto-generated constructor stub
     }
 
-    public void addPatientRoom() {} /**
+    /**
     *Sets the room for patient */ 
+    public void editPatientRoom(Patient patient, int room) {
+        patient.setRoom(room);
+    } 
 
-    public void addPatientCondition() {} /**
+    /**
+     * Calls userInput to get nurse information entered
+     * @return patient Info
+     */
+    public ArrayList<String> setPatientInfo() {
+        ArrayList<String> patientInfo = new ArrayList<>();
+        patientInfo.add(input.getHeartRate());
+        patientInfo.add(input.getBloodPressure());
+        patientInfo.add(input.getSymptoms());
+        return patientInfo;
+    }
+
+    /**
     *Sets the heart rate, bp, and sypmtoms of patient  */
+    public void addPatientCondition(Patient patient, String heartRate, String bloodPressure, String symptoms) {
+        patient.setBloodPressure(bloodPressure);
+        patient.setHeartRate(heartRate);
+        patient.setSymptoms(symptoms);
+        System.out.println("Patient info: " + patient.getSymptoms());
+    } 
     
     
     /** 

@@ -6,17 +6,25 @@ import java.util.ArrayList;
 public class Doctor extends Employee{ 
 
     private ArrayList<Date> futureAppointments;
+    UserInput userIntput = new UserInput();
     
     public Doctor(String username, String password, String email, String phoneNum, UserType type, String name, int empID, Location location) {
         super(username, password, email, phoneNum, type, name, empID, location); 
     }
 
-    
-    public void addDiagnosis() {} /** 
+    /** 
     * Adds the diagnosis to the patient */
+    public void addDiagnosis(Patient patient) {
+        String diagnosis = userIntput.addDiagnosis();
+        patient.setDiagnosis(diagnosis);
+    }
 
-    public void addPerscription() {} /** 
+    /** 
     * Adds perscription */
+    public void addPerscription(Patient patient) {
+        String perscription = userIntput.addPerscription();
+        patient.setPerscription(perscription);
+    } 
     
 
     

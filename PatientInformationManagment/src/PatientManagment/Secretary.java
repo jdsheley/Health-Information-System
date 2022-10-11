@@ -14,11 +14,41 @@ public class Secretary extends Employee{
     public void addAppointment() {} /**
     * adds appointment to doctor at location and patient */
 
-    public void changeStatus() {} /** 
-    * changes status of patient at location */
+    /**
+     * Changes the status of the patient in patient list to in room
+     * @param patient
+     * @param room
+     */
+    public void changeStatusInRoom(Patient patient, int room) {
+        patient.setStatus(Status.Room);
+        patient.setRoom(room);
+        System.out.println("Patient " + patient.getName() + " is in room " + patient.getRoom());
+    }
 
-    public void addPatient() {} /** 
-    * Adds patient to the location */
+    /**
+     * Changes the status of the patient in patient list to Exiting and removes patient from patient list
+     * @param patient
+     */
+    public void changeStatusExit(Patient patient) {
+        patient.setStatus(Status.Exit);
+        int id = patient.getId();
+        for(int i = 0; i < location.getPatientList().size(); i++) {
+            if(location.getPatientList().get(i).getId() == id) {
+                System.out.println("Removing patient " + location.getPatientList().get(i).getName());
+                location.getPatientList().remove(i);
+            }
+        }
+    }
+
+    /**
+      * Adds patient to location and sets status to waiting
+      * @param patient
+      */
+    public void addPatient(Patient patient) {
+        location.addPatientList(patient);
+        patient.setStatus(Status.WaitingRoom);
+        System.out.println("Patient " + patient.getName() + " added");
+    }
     
     /** 
      * @return String

@@ -2,6 +2,7 @@ package PatientManagment;
 import java.sql.Date;
 /**
     *This class is used as a model that holds all the patient information. The patient can also edit it's own insurance information and add a future appointment */
+
 public class Patient extends User{ 
 
     private String address;
@@ -9,19 +10,21 @@ public class Patient extends User{
     private Location gp; // The gp they use already in system
     private Location currentLoc; // Their current location and systme they are in. IE if they enter a hospital or different GP
     private Insurance insurance;// Insurance provider, can be altered by get and set methods
-    private String room; // Set by nurse
+    private int room; // Set by nurse
     private String symptoms; // Set by nurse
     private String heartRate; // Set by nurse
     private String bloodPressure; // Set by nurse
     private String diagnosis; // Set by doctor
-    private String prescription; // Doctor sets this, Pharm views it
+    private String perscription; // Doctor sets this, Pharm views it
     private Status status; // Set by secretary  
     private Date futureAppointment; // Secretary set
+    private int id;
+
     
-
-    public Patient(String username, String password, String email, String phoneNum, UserType type, String name) {
+    
+    public Patient(String username, String password, String email, String phoneNum, UserType type, String name, int id) {
         super(username, password, email, phoneNum, type, name);
-
+        
     }
     
     public void viewDiagnosis() {} /** 
@@ -33,7 +36,7 @@ public class Patient extends User{
     public Insurance getInsurance() {
         return this.insurance;
     }
-
+    
     
     /** 
      * @param insurance
@@ -51,6 +54,21 @@ public class Patient extends User{
     
     
     /** 
+     * @return int
+     */
+    public int getId() {
+        return this.id;
+    }
+
+    
+    /** 
+     * @param id
+     */
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+    /** 
      * @param status
      */
     public void setStatus(Status status) {
@@ -59,9 +77,9 @@ public class Patient extends User{
     
     
     /** 
-     * @return String
+     * @return int
      */
-    public String getRoom() {
+    public int getRoom() {
         return this.room;
     }
 
@@ -69,7 +87,7 @@ public class Patient extends User{
     /** 
      * @param room
      */
-    public void setRoom(String room) {
+    public void setRoom(int room) {
         this.room = room;
     }
 
@@ -141,16 +159,16 @@ public class Patient extends User{
     /** 
      * @return String
      */
-    public String getPrescription() {
-        return this.prescription;
+    public String getPerscription() {
+        return this.perscription;
     }
 
     
     /** 
      * @param prescription
      */
-    public void setPrescription(String prescription) {
-        this.prescription = prescription;
+    public void setPerscription(String prescription) {
+        this.perscription = prescription;
     }
 
     

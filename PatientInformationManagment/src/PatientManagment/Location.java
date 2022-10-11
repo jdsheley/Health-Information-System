@@ -131,6 +131,14 @@ public class Location {
         this.patientList = patientList;
     }
 
+    /**
+     * Adds patient to list in location when patient checks in
+     * @param patient
+     */  
+    public void addPatientList(Patient patient) {
+        patientList.add(patient);
+    }
+
     
     /** 
      * @return ArrayList<Nurse>
