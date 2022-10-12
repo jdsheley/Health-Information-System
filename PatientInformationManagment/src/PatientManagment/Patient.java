@@ -19,12 +19,22 @@ public class Patient extends User{
     private Status status; // Set by secretary  
     private Date futureAppointment; // Secretary set
     private int id;
+    private double bill;
 
+    
     
     
     public Patient(String username, String password, String email, String phoneNum, UserType type, String name, int id) {
         super(username, password, email, phoneNum, type, name);
         
+    }
+    
+    public double getBill() {
+        return this.bill;
+    }
+
+    public void setBill(double bill) {
+        this.bill = bill;
     }
     
     public void viewDiagnosis() {} /** 
