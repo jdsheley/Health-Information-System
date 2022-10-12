@@ -28,7 +28,7 @@ public class Doctor extends Employee{
         System.out.println("Perscription is: " + perscription);
     } 
     
-
+///comment
     
     /** 
      * Accessed by secretary to view appointment
