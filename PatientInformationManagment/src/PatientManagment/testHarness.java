@@ -2,20 +2,17 @@ package PatientManagment;
 
 import java.util.ArrayList;
 
-/** 
- * This will hold the main contents of the app
- */
-
-public class App {
-     
+public class testHarness {
     public static void main(String[] args) throws Exception {
+        System.out.println("Test Harness Started");
+        testHarnessGo();
     }
 
-    /**
+     /**
      * Runs through scenario of patient walking into location. Being added, nurse updates, doctor updates and then leaves
      * Test case includes a patient already in system to simulate flow
      */
-    public static void testHarness() {
+    public static void testHarnessGo() {
 
         ArrayList<Integer> rooms = new ArrayList<Integer>();
         ArrayList<Patient> pList = new ArrayList<Patient>();
