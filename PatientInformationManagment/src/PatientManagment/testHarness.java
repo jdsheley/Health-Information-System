@@ -38,6 +38,10 @@ public class testHarness {
         secList.add(testSecretary);
         pharmList.add(testPhar);
 
+
+        /**
+         * Simulates a patient walking in. A secretary adding the patient. The patient going to the room. The patient being treated by a nurse and doctor
+         */
         testLoc.setPatientList(pList);
         testSecretary.addPatient(testPatient);
         testSecretary.changeStatusInRoom(testPatient, 100);
