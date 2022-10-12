@@ -11,11 +11,15 @@ public class Insurance extends Employee{
     }
     
 
-    public void viewBill(Patient patient) {} /**
-    *View the bill of the patient */
+    public void viewBill(Patient patient) {
+        Double bill = patient.getBill();
+        System.out.println(bill);
+    } 
 
-    public void viewDiagnosis(Patient patient) {} /**
-    *View the diagnosis given by the doctor*/
+    public void viewDiagnosis(Patient patient) {
+        String diagnosis = patient.getDiagnosis();
+        System.out.println(diagnosis);
+    } 
     
     public String getName() {
         return this.name;
