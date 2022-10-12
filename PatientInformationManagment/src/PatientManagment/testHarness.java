@@ -28,7 +28,8 @@ public class testHarness {
         Doctor testDoctor = new Doctor("testD", "testD", "testDEmail", "123456789", UserType.Doctor, "TestD", 101, testLoc);
         Secretary testSecretary = new Secretary("testSec", "testSec", "testSEmail", "1234567", UserType.Secretary, "testSec", 102, testLoc);
         Pharm testPhar = new Pharm("testPharm", "testPharm", "testPharmEmail", "1234567", UserType.Pharm, "testPharm", 103 , testLoc);
-        
+        Insurance testInsurance = new Insurance("testInsurance", "testInsurance", "testInsuranceEmail", "123456789", null, "testInsurance", 145, testLoc);
+
         rooms.add(100);
         rooms.add(101);
         rooms.add(102);
@@ -49,5 +50,7 @@ public class testHarness {
         testNurse.addPatientCondition(testPatient, patientInfo.get(0), patientInfo.get(1), patientInfo.get(2));
         testDoctor.addDiagnosis(testPatient);
         testDoctor.addPerscription(testPatient);
+        testInsurance.viewBill(testPatient);
+        testInsurance.viewDiagnosis(testPatient);
     }
 }
