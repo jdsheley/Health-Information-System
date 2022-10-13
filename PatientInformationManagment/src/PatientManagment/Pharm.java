@@ -9,7 +9,10 @@ public class Pharm extends Employee{
     }
 
 
-    public void viewPrescription() {} /** 
+    public void viewPrescription(Patient patient) {
+        String prescription = patient.getPerscription();
+        System.out.println(prescription);
+    } /** 
     * Views perscription and alters status. May make perscriptions a class to add status to them */
 
     

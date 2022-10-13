@@ -52,5 +52,8 @@ public class testHarness {
         testDoctor.addPerscription(testPatient);
         testInsurance.viewBill(testPatient);
         testInsurance.viewDiagnosis(testPatient);
+        testPhar.viewPrescription(testPatient);
+        testPatient.viewDiagnosis(testPatient);
+        testPatient.viewPrescription(testPatient);
     }
 }

@@ -37,10 +37,16 @@ public class Patient extends User{
         this.bill = bill;
     }
     
-    public void viewDiagnosis() {} /** 
+    public void viewDiagnosis(Patient patient) {
+        String diagnosis = patient.getDiagnosis();
+        System.out.println(diagnosis);
+    } /** 
     * View diagnosis from doctor */
     
-    public void viewPrescription() {} /** 
+    public void viewPrescription(Patient patient) {
+        perscription = patient.getPerscription();
+        System.out.println(perscription);
+    } /** 
     * View Prescription */
     
     public Insurance getInsurance() {
