@@ -1,5 +1,6 @@
-package PatientManagment;
+package LocationPackage;
 import java.util.ArrayList;
+import PatientManagment.*;
 /**
     * Used as a model class, will hold the information of doctors, nurses etc and patients at the location */
 public class Location { 

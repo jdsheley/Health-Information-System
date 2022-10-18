@@ -1,4 +1,5 @@
 package PatientManagment;
+import LocationPackage.*;
 
 public class Employee extends User{
 

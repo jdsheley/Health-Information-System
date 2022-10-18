@@ -1,5 +1,6 @@
 package PatientManagment;
 import java.util.ArrayList;
+import LocationPackage.*;
 /**
     *This class can view the payment information of the patient and the diagnosis */
 public class Insurance extends Employee{ 

@@ -1,6 +1,7 @@
 package PatientManagment;
 import java.sql.Date;
 import java.util.ArrayList;
+import LocationPackage.*;
 /**
     * This class will be assigned to a location and be able to alter diagnosis and add a perscription*/
 public class Doctor extends Employee{ 

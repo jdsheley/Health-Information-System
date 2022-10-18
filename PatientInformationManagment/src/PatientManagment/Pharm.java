@@ -1,10 +1,11 @@
 package PatientManagment;
+import LocationPackage.*;
  /**
     *This class is located at a pharmacy or hospital, and can view perscriptions and edit them */
-public class Pharm extends Employee{
+public class Pharm extends User{
 
     public Pharm(String username, String password, String email, String phoneNum, UserType type, String name, int empID, Location location) {
-        super(username, password, email, phoneNum, type, name, empID, location);
+        super(username, password, email, phoneNum, type, name);
         //TODO Auto-generated constructor stub
     }
 
@@ -32,36 +33,6 @@ public class Pharm extends Employee{
     }
 
     
-    /** 
-     * @return int
-     */
-    public int getEmpID() {
-        return this.empID;
-    }
-
-    
-    /** 
-     * @param empID
-     */
-    public void setEmpID(int empID) {
-        this.empID = empID;
-    }
-
-    
-    /** 
-     * @return Location
-     */
-    public Location getLocation() {
-        return this.location;
-    }
-
-    
-    /** 
-     * @param location
-     */
-    public void setLocation(Location location) {
-        this.location = location;
-    }
 
     
     // /** 
