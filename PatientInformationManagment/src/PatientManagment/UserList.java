@@ -14,12 +14,11 @@ public class UserList {
             this.writeUserListFile();
             this.readUserListFile();
         }
-        printUserList();
     }
 
     public void createUserList(){
 
-        User u1 = new User("Joewhite", "password", "joe@psu.edu", "2157206172", Patient, "Joe White");
+        User u1 = new User("Joewhite", "password", "joe@psu.edu", "2157206172", "Joe White");
 
         listOfUsers.add(u1);
     }
