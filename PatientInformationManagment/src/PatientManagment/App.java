@@ -1,4 +1,5 @@
 package PatientManagment;
+import LoginPackage.*;
 
 
 /** 
@@ -8,6 +9,10 @@ package PatientManagment;
 public class App {
      
     public static void main(String[] args) throws Exception {
-        LoginController loginController = new LoginController();
+        LoginUI testLogin;
+        LoginController loginController;
+        loginController = new LoginController();
+        testLogin = new LoginUI(loginController);
+        loginController.showLoginUI(testLogin);
     }
 }

@@ -1,7 +1,8 @@
-package PatientManagment;
+package LoginPackage;
 
 import java.io.*;
 import java.util.ArrayList;
+import PatientManagment.*;
 
 public class UserList {
     private ArrayList<User> listOfUsers = new ArrayList<>();
