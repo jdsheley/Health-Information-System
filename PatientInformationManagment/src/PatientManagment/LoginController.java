@@ -3,7 +3,7 @@ package PatientManagment;
 public class LoginController {
     private LoginUI theLoginUI;
     private UserList theUserList;
-    public LoginCtrl(){
+    public LoginController(){
         theUserList = new UserList();
         theLoginUI = new LoginUI(this);
 
