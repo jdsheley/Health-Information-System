@@ -14,5 +14,6 @@ public class App {
         loginController = new LoginController();
         testLogin = new GUI(loginController);
         loginController.showLoginUI(testLogin);
+        System.out.println("Ran");
     }
 }
