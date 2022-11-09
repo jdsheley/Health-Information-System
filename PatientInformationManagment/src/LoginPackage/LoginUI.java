@@ -58,6 +58,8 @@ public class LoginUI extends JFrame{
                 loginController.requestAuthenticate(textUsername.getText(), textPassword.getText());
             }
         });
+
+        //verify
     }
 }
 

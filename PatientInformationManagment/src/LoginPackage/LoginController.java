@@ -30,5 +30,14 @@ public class LoginController {
             System.out.println("Invalid username/password");
 
     }
+
+    public void requestVerify(String captchaString){
+        if(captchaString.equals("McoWxBAz")){
+            System.out.println("Captcha Verified");
+        }
+        else{
+            System.out.println("Invalid Captcha");
+        }
+    }
     
 }

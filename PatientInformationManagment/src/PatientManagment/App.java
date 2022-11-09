@@ -1,6 +1,6 @@
 package PatientManagment;
 import LoginPackage.*;
-import PatientInformationPackage.*;
+//import PatientInformationPackage.*;
 
 
 /** 

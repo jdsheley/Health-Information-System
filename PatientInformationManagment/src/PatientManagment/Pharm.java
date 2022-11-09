@@ -5,7 +5,7 @@ import LocationPackage.*;
 public class Pharm extends User{
 
     public Pharm(String username, String password, String email, String phoneNum, UserType type, String name, int empID, Location location) {
-        super(username, password, email, phoneNum, name);
+        super(username, password, email, phoneNum, type, name);
         //TODO Auto-generated constructor stub
     }
 
