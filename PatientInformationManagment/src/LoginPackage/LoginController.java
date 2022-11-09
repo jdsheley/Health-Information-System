@@ -23,14 +23,8 @@ public class LoginController {
     public void requestAuthenticate(String userName, String password){
         if(theUserList.authenticate(userName, password)==true){
             System.out.println("Valid user");
-<<<<<<< HEAD
-<<<<<<< HEAD
-            patientListView.showPatientList();
 
-=======
->>>>>>> parent of 00c8c24 (Added patient list screen)
-=======
->>>>>>> parent of 00c8c24 (Added patient list screen)
+            patientListView.showPatientList();
         }
         else
             System.out.println("Invalid username/password");
