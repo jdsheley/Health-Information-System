@@ -14,8 +14,9 @@ public class LoginUI extends JFrame{
     JFrame frame = new JFrame("LoginUI");
     JTextField textUsername = new JTextField("Username:");
     JTextField textPassword = new JTextField("Password:"); 
-    JTextField textCaptcha = new JTextField("Please enter captcha:")
+    JTextField textCaptcha = new JTextField("Please enter captcha:");
     JButton loginButton = new JButton("Login");
+    JLabel captchaLabel = new JLabel("Captcha: McoWxBAz");
     LoginController loginController;
 
     public LoginUI(LoginController loginController) {
@@ -26,7 +27,7 @@ public class LoginUI extends JFrame{
         frame.setLayout(null);
         frame.setTitle("LOGIN PAGE");
         frame.setLocation(new Point(500, 300));
-        frame.setSize(new Dimension(400, 200));
+        frame.setSize(new Dimension(400, 400));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
          textUsername.setBounds(100, 27, 190, 25);
@@ -34,13 +35,15 @@ public class LoginUI extends JFrame{
 
          textPassword.setBounds(100, 60, 190, 25);
          frame.add(textPassword);
-/* 
-         textCaptcha.setBounds(100, 120, 190, 25);
-         frame.add(textCaptcha);
-         */
 
+         textCaptcha.setBounds(100, 180, 250, 25);
+         frame.add(textCaptcha);
+         
         loginButton.setBounds(100, 110, 90, 25);
         frame.add(loginButton);
+
+        captchaLabel.setBounds(100, 150, 190, 25);
+        frame.add(captchaLabel);
 
         frame.setVisible(true);
 
