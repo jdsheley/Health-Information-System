@@ -59,7 +59,12 @@ public class LoginUI extends JFrame{
             }
         });
 
-        //verify
+        verifyButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                loginController.requestVerify(textCaptcha.getText());
+            }
+        });
     }
 }
 
