@@ -12,8 +12,9 @@ import PatientManagment.*;
 
 public class LoginUI extends JFrame{
     JFrame frame = new JFrame("LoginUI");
-    JTextField textUsername = new JTextField("Username");
-    JTextField textPassword = new JTextField("Password"); 
+    JTextField textUsername = new JTextField("Username:");
+    JTextField textPassword = new JTextField("Password:"); 
+    JTextField textCaptcha = new JTextField("Please enter captcha:")
     JButton loginButton = new JButton("Login");
     LoginController loginController;
 
@@ -33,6 +34,10 @@ public class LoginUI extends JFrame{
 
          textPassword.setBounds(100, 60, 190, 25);
          frame.add(textPassword);
+/* 
+         textCaptcha.setBounds(100, 120, 190, 25);
+         frame.add(textCaptcha);
+         */
 
         loginButton.setBounds(100, 110, 90, 25);
         frame.add(loginButton);
