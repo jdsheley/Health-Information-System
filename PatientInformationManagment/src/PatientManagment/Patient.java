@@ -1,6 +1,7 @@
 package PatientManagment;
 import java.sql.Date;
 import LocationPackage.*;
+import java.util.ArrayList;
 /**
     *This class is used as a model that holds all the patient information. The patient can also edit it's own insurance information and add a future appointment */
 
