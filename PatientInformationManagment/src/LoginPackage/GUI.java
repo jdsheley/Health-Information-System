@@ -21,7 +21,7 @@ public class GUI extends JFrame {
         this.loginController = loginController;
     }
 
-    public void showLogin(){
+    public void showTest(){
         frame.setLayout(null);
         frame.setTitle("LOGIN PAGE");
         frame.setLocation(new Point(500, 300));

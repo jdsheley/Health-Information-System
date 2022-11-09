@@ -9,10 +9,10 @@ import LoginPackage.*;
 public class App {
      
     public static void main(String[] args) throws Exception {
-        GUI testLogin;
+        LoginUI testLogin;
         LoginController loginController;
         loginController = new LoginController();
-        testLogin = new GUI(loginController);
+        testLogin = new LoginUI(loginController);
         loginController.showLoginUI(testLogin);
         System.out.println("Ran");
     }
