@@ -1,0 +1,8 @@
+{
+    "java.project.sourcePaths": [
+        "PatientInformationManagment/src",
+        "PatientInformationManagment/patientmanagment/src/main/java/maven/PatientManagment",
+        "PatientInformationManagment/patientmanagment/src/main/java/maven/PatientManagmentFolder/PatientManagment"
+    ],
+    "maven.view": "hierarchical"
+}
