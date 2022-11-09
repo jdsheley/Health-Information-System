@@ -19,7 +19,7 @@ public class UserList {
 
     public void createUserList(){
 
-        User u1 = new User("Joewhite", "password", "joe@psu.edu", "2157206172", "Joe White");
+        User u1 = new User("Joewhite", "password", "joe@psu.edu", "2157206172", UserType.Patient, "Joe White");
 
         listOfUsers.add(u1);
     }

@@ -46,7 +46,7 @@ public class LoginUI extends JFrame{
         captchaLabel.setBounds(100, 150, 190, 25);
         frame.add(captchaLabel);
 
-        verifyButton.setBounds(100, 300, 90, 25);
+        verifyButton.setBounds(100, 220, 120, 25);
         frame.add(verifyButton);
 
         frame.setVisible(true);

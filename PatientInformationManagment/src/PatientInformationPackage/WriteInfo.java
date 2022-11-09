@@ -37,7 +37,7 @@ public class WriteInfo {
     }
 
     public static void assembleMap(Patient patient) {
-        strings.put();
+        //strings.put();
     }
 
 }
