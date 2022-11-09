@@ -17,6 +17,7 @@ public class LoginUI extends JFrame{
     JTextField textCaptcha = new JTextField("Please enter captcha:");
     JButton loginButton = new JButton("Login");
     JLabel captchaLabel = new JLabel("Captcha: McoWxBAz");
+    JButton verifyButton = new JButton("Verify Captcha");
     LoginController loginController;
 
     public LoginUI(LoginController loginController) {
@@ -44,6 +45,9 @@ public class LoginUI extends JFrame{
 
         captchaLabel.setBounds(100, 150, 190, 25);
         frame.add(captchaLabel);
+
+        verifyButton.setBounds(100, 300, 90, 25);
+        frame.add(verifyButton);
 
         frame.setVisible(true);
 
