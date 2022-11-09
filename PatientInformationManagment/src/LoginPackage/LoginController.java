@@ -24,8 +24,11 @@ public class LoginController {
         if(theUserList.authenticate(userName, password)==true){
             System.out.println("Valid user");
 <<<<<<< HEAD
+<<<<<<< HEAD
             patientListView.showPatientList();
 
+=======
+>>>>>>> parent of 00c8c24 (Added patient list screen)
 =======
 >>>>>>> parent of 00c8c24 (Added patient list screen)
         }
