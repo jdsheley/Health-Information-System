@@ -22,13 +22,8 @@ public class Patient extends User{
     private Location pharm; // The pharmacy that they prefer already in system
     private Location gp; // The gp they use already in system
     private Location currentLoc; // Their current location and systme they are in. IE if they enter a hospital or different GP
-<<<<<<< Updated upstream
-    //private ArrayList <String> pastPerscriptions;
-    //private ArrayList <String> pastDiagnosis;
-=======
     private ArrayList<String> pastPerscriptions;
     private ArrayList<String> pastDiagnosis;
->>>>>>> Stashed changes
 
     
     

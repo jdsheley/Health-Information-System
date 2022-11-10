@@ -86,10 +86,6 @@ public class WriteInfo {
           }
     }
 
-<<<<<<< Updated upstream
-    public static void assembleMap(Patient patient) {
-        //strings.put();
-=======
     public void assembleMap(Patient patient) {
         strings.put("username", patient.getUsername());
         strings.put("password", patient.getPassword());
@@ -110,7 +106,6 @@ public class WriteInfo {
         locations.put("currentLoc", patient.getCurrentLoc());
         arrayLists.put("pastPerscriptions", patient.getPastPerscriptions());
         arrayLists.put("pastDiagnosis", patient.getPastDiagnosis()); 
->>>>>>> Stashed changes
     }
 
 }
