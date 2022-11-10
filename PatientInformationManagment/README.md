@@ -1,18 +1,6 @@
-## Getting Started
+## Ethan Konicek
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+I added the Patient information package which contains WriteInfo.java. This class is has an iterator behavioral pattern. 
+This class creates multiple hashmaps based on the patient data, iterates and writes it to a file so that it can be accessed.
 
-## Folder Structure
-
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+I also wrote the login UI which inclused input prompts
