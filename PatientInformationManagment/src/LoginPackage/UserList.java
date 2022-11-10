@@ -20,8 +20,11 @@ public class UserList {
     public void createUserList(){
 
         User u1 = new User("Joewhite", "password", "joe@psu.edu", "2157206172", UserType.Patient, "Joe White");
-
         listOfUsers.add(u1);
+        User u2 = new User("JohnS", "password1", "john@psu.edu", "1234567890", UserType.Patient, "John Smith");
+        listOfUsers.add(u2);
+        User u3 = new User("MaryW", "password2", "mary@psu.edu", "0987654321", UserType.Patient, "Mary Williams");
+        listOfUsers.add(u3);
     }
 
     public void readUserListFile(){
@@ -67,6 +70,10 @@ public class UserList {
 
     public ArrayList<User> getListOfUsers() {
         return listOfUsers;
+    }
+
+    public User getSpecificUser(int userPosition) {
+        return listOfUsers.get(userPosition);
     }
 
     public void setListOfUsers(ArrayList<User> listOfUsers) {
