@@ -3,6 +3,7 @@ bloodPressure:null
 password:testP
 address:null
 heartRate:null
+name:TestP
 diagnosis:null
 phoneNum:123456789
 perscription:null
@@ -13,6 +14,7 @@ bloodPressure:null
 password:null
 address:null
 heartRate:null
+name:null
 diagnosis:null
 phoneNum:null
 perscription:null
@@ -23,6 +25,7 @@ bloodPressure:null
 password:null
 address:null
 heartRate:null
+name:null
 diagnosis:null
 phoneNum:null
 perscription:null

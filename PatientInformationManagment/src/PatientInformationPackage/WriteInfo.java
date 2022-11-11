@@ -29,17 +29,22 @@ public class WriteInfo {
         try {
             try (FileWriter patientWriter = new FileWriter("PatientInfo.txt")) {
                 Iterator<String> stringIT = strings.keySet().iterator();
+                int printCount = 0;
                 while(stringIT.hasNext()) {
                     String key = stringIT.next();
                     String value = strings.get(key);
                     patientWriter.write(key + ":" + value+ "\n");
+                    System.out.println(key + ":" + value+ "\n");
+                    printCount +=1;
                 }
+                System.out.println(printCount);
 
                 Iterator<String> intIT = strings.keySet().iterator();
                 while(intIT.hasNext()) {
                     String key = intIT.next();
                     Integer value = ints.get(key);
                     patientWriter.write(key + ":" + value+ "\n");
+                    System.out.println(key + ":" + value+ "\n");
                 }
 
                 Iterator<String> doubleIT = strings.keySet().iterator();
@@ -87,6 +92,7 @@ public class WriteInfo {
     }
 
     public void assembleMap(Patient patient) {
+        strings.put("name",patient.getName());
         strings.put("username", patient.getUsername());
         strings.put("password", patient.getPassword());
         strings.put("email", patient.getEmail());
