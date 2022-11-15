@@ -16,7 +16,10 @@ public class PatientTableController {
     public PatientTableController() {
         thePatientList = new PatientList();
         thePatientTableModel = new PatientTableModel(thePatientList.getThePatientArrayList());
-        patientTableUI = new PatientTableUI(this);
+    }
+
+    public void show() {
+        System.out.println("show Table");
         patientTableUI.setVisible(true);
     }
 

@@ -42,6 +42,7 @@ public class LoginUI extends JFrame{
          
         loginButton.setBounds(100, 110, 90, 25);
         frame.add(loginButton);
+        loginButton.addActionListener(new OpenListPage());
 
         captchaLabel.setBounds(100, 150, 190, 25);
         frame.add(captchaLabel);
@@ -52,20 +53,33 @@ public class LoginUI extends JFrame{
         frame.setVisible(true);
 
 
-        loginButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                loginController.requestAuthenticate(textUsername.getText(), textPassword.getText());
-            }
-        });
 
-        verifyButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                loginController.requestVerify(textCaptcha.getText());
-            }
-        });
+        // loginButton.addActionListener(new ActionListener() {
+        //     @Override
+        //     public void actionPerformed(ActionEvent e) {
+        //         loginController.requestAuthenticate(textUsername.getText(), textPassword.getText());
+        //         System.out.println("Login action listener");
+        //     }
+        // });
+
+        // verifyButton.addActionListener(new ActionListener() {
+        //     @Override
+        //     public void actionPerformed(ActionEvent e) {
+        //         loginController.requestVerify(textCaptcha.getText());
+        //     }
+        // });
     }
+
+    public void close() {
+        frame.setVisible(false);
+    }
+
+    class OpenListPage implements ActionListener{
+        public void actionPerformed(ActionEvent e) {
+            loginController.requestAuthenticate(textUsername.getText(), textPassword.getText());
+            System.out.println("Login action listener");
+        }
+     }	
 }
 
 

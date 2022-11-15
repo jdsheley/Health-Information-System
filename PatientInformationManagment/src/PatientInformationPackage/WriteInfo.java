@@ -36,22 +36,22 @@ public class WriteInfo {
                     patientWriter.write(key + ":" + value+ "\n");
                     System.out.println(key + ":" + value+ "\n");
                     printCount +=1;
+                    System.out.println(printCount);
                 }
-                System.out.println(printCount);
 
                 Iterator<String> intIT = strings.keySet().iterator();
                 while(intIT.hasNext()) {
                     String key = intIT.next();
                     Integer value = ints.get(key);
-                    patientWriter.write(key + ":" + value+ "\n");
-                    System.out.println(key + ":" + value+ "\n");
+                    // patientWriter.write(key + ":" + value+ "\n");
+                    // System.out.println(key + ":" + value+ "\n");
                 }
 
                 Iterator<String> doubleIT = strings.keySet().iterator();
                 while(doubleIT.hasNext()) {
                     String key = doubleIT.next();
                     Double value = doubles.get(key);
-                    patientWriter.write(key + ":" + value + "\n");
+                    // patientWriter.write(key + ":" + value + "\n");
                 }
             }
             

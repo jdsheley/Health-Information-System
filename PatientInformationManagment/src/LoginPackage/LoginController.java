@@ -4,7 +4,16 @@ package LoginPackage;
 public class LoginController {
     private LoginUI theLoginUI;
     private UserList theUserList;
-    PatientListView patientListView = new PatientListView();
+    PatientTableUI patientTable;
+    PatientTableController listController;
+
+    public PatientTableController getListController() {
+        return this.listController;
+    }
+
+    public void setListController(PatientTableController listController) {
+        this.listController = listController;
+    }
 
     public LoginController(){
         theUserList = new UserList();
@@ -23,8 +32,7 @@ public class LoginController {
     public void requestAuthenticate(String userName, String password){
         if(theUserList.authenticate(userName, password)==true){
             System.out.println("Valid user");
-
-            patientListView.showPatientList();
+            theLoginUI.close();
         }
         else
             System.out.println("Invalid username/password");
