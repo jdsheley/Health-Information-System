@@ -1,5 +1,6 @@
 package LoginPackage;
 
+import PatientManagment.Patient;
 
 public class LoginController {
     private LoginUI theLoginUI;
@@ -33,10 +34,16 @@ public class LoginController {
         if(theUserList.authenticate(userName, password)==true){
             System.out.println("Valid user");
             theLoginUI.close();
+            setNextScreen(listController, patientTable);
         }
         else
             System.out.println("Invalid username/password");
 
+    }
+
+    public void setNextScreen(PatientTableController controller, PatientTableUI tableUI) {
+        System.out.println("Show table UI");
+        controller.show(tableUI);
     }
 
     public void requestVerify(String captchaString){

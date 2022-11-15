@@ -34,9 +34,6 @@ public class WriteInfo {
                     String key = stringIT.next();
                     String value = strings.get(key);
                     patientWriter.write(key + ":" + value+ "\n");
-                    System.out.println(key + ":" + value+ "\n");
-                    printCount +=1;
-                    System.out.println(printCount);
                 }
 
                 Iterator<String> intIT = strings.keySet().iterator();

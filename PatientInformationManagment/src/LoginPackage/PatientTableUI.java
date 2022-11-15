@@ -13,7 +13,6 @@ public class PatientTableUI extends JFrame {
 
     public PatientTableUI(PatientTableController patientTableCntl) {
         this.patientTableCntl = patientTableCntl;
-        initialTableComponents();
     }
 
     public void initialTableComponents() {
@@ -38,6 +37,11 @@ public class PatientTableUI extends JFrame {
         this.getContentPane().add(buttonPanel, BorderLayout.SOUTH);
         this.getContentPane().add(tablePanel, BorderLayout.CENTER);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setVisible(true);
+    }
+
+    public void showTable() {
+        initialTableComponents();
     }
 
     public class ExitButtonListener implements ActionListener {

@@ -16,11 +16,12 @@ public class PatientTableController {
     public PatientTableController() {
         thePatientList = new PatientList();
         thePatientTableModel = new PatientTableModel(thePatientList.getThePatientArrayList());
+
     }
 
-    public void show() {
+    public void show(PatientTableUI tableUI) {
         System.out.println("show Table");
-        patientTableUI.setVisible(true);
+        tableUI.showTable();
     }
 
     public PatientTableModel getThePatientTableModel() {
