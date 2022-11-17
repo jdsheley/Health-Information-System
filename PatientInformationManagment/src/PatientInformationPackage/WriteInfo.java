@@ -36,49 +36,49 @@ public class WriteInfo {
                     patientWriter.write(key + ":" + value+ "\n");
                 }
 
-                Iterator<String> intIT = strings.keySet().iterator();
+                Iterator<String> intIT = ints.keySet().iterator();
                 while(intIT.hasNext()) {
                     String key = intIT.next();
                     Integer value = ints.get(key);
-                    // patientWriter.write(key + ":" + value+ "\n");
+                    patientWriter.write(key + ":" + value+ "\n");
                     // System.out.println(key + ":" + value+ "\n");
                 }
 
-                Iterator<String> doubleIT = strings.keySet().iterator();
+                Iterator<String> doubleIT = doubles.keySet().iterator();
                 while(doubleIT.hasNext()) {
                     String key = doubleIT.next();
                     Double value = doubles.get(key);
-                    // patientWriter.write(key + ":" + value + "\n");
+                    patientWriter.write(key + ":" + value + "\n");
                 }
             }
             
-            Iterator<String> insuranceIT = strings.keySet().iterator();
-            while(insuranceIT.hasNext()) {
-                String key = insuranceIT.next();
-                Insurance value = insurance.get(key);
-                //patientWriter.write(key + ":" + value.getName());
-            }
+            // Iterator<String> insuranceIT = insurance.keySet().iterator();
+            // while(insuranceIT.hasNext()) {
+            //     String key = insuranceIT.next();
+            //     Insurance value = insurance.get(key);
+            //     patientWriter.write(key + ":" + value.getName());
+            // }
 
-            Iterator<String> locationIT = strings.keySet().iterator();
-            while(locationIT.hasNext()) {
-                String key = locationIT.next();
-                Location value = locations.get(key);
-                //patientWriter.write(key + ":" + value.getName());
-            }
+            // Iterator<String> locationIT = locations.keySet().iterator();
+            // while(locationIT.hasNext()) {
+            //     String key = locationIT.next();
+            //     Location value = locations.get(key);
+            //     patientWriter.write(key + ":" + value.getName());
+            // }
 
-            Iterator<String> arrayListsIT = strings.keySet().iterator();
-            while(arrayListsIT.hasNext()) {
-                String key = arrayListsIT.next();
-                ArrayList<String> value = arrayLists.get(key);
-                //patientWriter.write(key + ":" + value.toString());
-            }
+            // Iterator<String> arrayListsIT = arrayLists.keySet().iterator();
+            // while(arrayListsIT.hasNext()) {
+            //     String key = arrayListsIT.next();
+            //     ArrayList<String> value = arrayLists.get(key);
+            //     patientWriter.write(key + ":" + value.toString());
+            // }
 
-            Iterator<String> datesIT = strings.keySet().iterator();
-            while(datesIT.hasNext()) {
-                String key = datesIT.next();
-                Date value = dates.get(key);
-                //patientWriter.write(key + ":" + value.toString());
-            }
+            // Iterator<String> datesIT = dates.keySet().iterator();
+            // while(datesIT.hasNext()) {
+            //     String key = datesIT.next();
+            //     Date value = dates.get(key);
+            //     patientWriter.write(key + ":" + value.toString());
+            // }
 
         
             System.out.println("Successfully wrote to the file.");
