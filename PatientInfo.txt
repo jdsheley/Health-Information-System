@@ -3,10 +3,36 @@ bloodPressure:null
 password:testP
 address:null
 heartRate:null
+<<<<<<< Updated upstream
 name:TestP
+=======
+>>>>>>> Stashed changes
 diagnosis:null
 phoneNum:123456789
 perscription:null
 email:testPEmail
 username:testP
+<<<<<<< Updated upstream
 id:0
+=======
+symptoms:null
+bloodPressure:null
+password:null
+address:null
+heartRate:null
+diagnosis:null
+phoneNum:null
+perscription:null
+email:null
+username:null
+symptoms:null
+bloodPressure:null
+password:null
+address:null
+heartRate:null
+diagnosis:null
+phoneNum:null
+perscription:null
+email:null
+username:null
+>>>>>>> Stashed changes
