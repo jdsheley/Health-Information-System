@@ -3,6 +3,8 @@ import LoginPackage.*;
 import PatientInformationPackage.*;
 import java.util.ArrayList;
 import LocationPackage.Location;
+import java.io.File;
+import java.util.Scanner;
 //import PatientInformationPackage.*;
 
 
@@ -58,9 +60,12 @@ public class App {
         pharmList.add(testPhar);
         testPatient.setInsurance(testInsurance);
 
+        File output = new File("C:\\Users\\Ethan\\OneDrive\\Documents\\GitHub\\Health-Information-System\\PatientInformationManagment\\src\\PatientManagment\\PatientInfo.txt");
         WriteInfo testWriter = new WriteInfo();
         testWriter.assembleMap(testPatient);
-        testWriter.write();
+        testWriter.write(output);
+        ReadInfo testReader = new ReadInfo();
+        testReader.readString(output);
 
 
         /**

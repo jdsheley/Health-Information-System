@@ -10,8 +10,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class WriteInfo {
-
-
+    File file;
     HashMap <String, String> strings = new HashMap<>();
     HashMap <String, Integer> ints = new HashMap<>();
     HashMap <String, Double> doubles = new HashMap<>();
@@ -21,13 +20,13 @@ public class WriteInfo {
     HashMap <String, Date> dates = new HashMap<>();
 
     public void writeInfo() {
-
+        
     }
 
 
-    public void write() { //Will rewrite over file
+    public void write(File file) { //Will rewrite over file
         try {
-            try (FileWriter patientWriter = new FileWriter("PatientInfo.txt")) {
+            try (FileWriter patientWriter = new FileWriter(file)) {
                 Iterator<String> stringIT = strings.keySet().iterator();
                 int printCount = 0;
                 while(stringIT.hasNext()) {

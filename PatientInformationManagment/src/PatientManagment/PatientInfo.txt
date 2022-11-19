@@ -1,0 +1,13 @@
+symptoms:null
+bloodPressure:null
+password:testP
+address:null
+heartRate:null
+name:TestP
+diagnosis:null
+phoneNum:123456789
+perscription:null
+email:testPEmail
+username:testP
+id:0
+bill:0.0
