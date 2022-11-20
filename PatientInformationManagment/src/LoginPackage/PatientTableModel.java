@@ -1,5 +1,5 @@
 package LoginPackage;
-
+import PatientInformationPackage.*;
 import PatientManagment.User;
 
 import javax.swing.table.AbstractTableModel;
