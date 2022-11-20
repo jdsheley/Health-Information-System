@@ -15,7 +15,21 @@ import java.util.Scanner;
 public class App {
      
     public static void main(String[] args) throws Exception {
-        // panel for viewing the list of patients, will appear after logging in
+        //Removed from testharness 
+        ArrayList<Integer> rooms = new ArrayList<Integer>();
+        ArrayList<Patient> pList = new ArrayList<Patient>();
+        ArrayList<Nurse> nurseList = new ArrayList<>();
+        ArrayList<Doctor> doctorList = new ArrayList<>();
+        ArrayList<Secretary> secList = new ArrayList<>();
+        ArrayList<Pharm> pharmList = new ArrayList<>();
+        Location testLoc = new Location("testHospital", LocationType.Hospital, "testH", rooms, pList, nurseList , doctorList, secList, pharmList); 
+        Patient testPatient = new Patient("testP", "testP", "testPEmail", "123456789", UserType.Patient, "TestP", 123);
+        File output = new File("C:\\Users\\Ethan\\OneDrive\\Documents\\GitHub\\Health-Information-System\\PatientInformationManagment\\src\\PatientManagment\\PatientInfo.txt");
+        WriteInfo testWriter = new WriteInfo();
+        testWriter.assembleMap(testPatient);
+        testWriter.write(output);
+        ReadInfo testReader = new ReadInfo();
+        testReader.readString(output);
 
         // login panel, will come firs†
         LoginUI testLogin;
@@ -28,22 +42,18 @@ public class App {
         tableUI = new PatientTableUI(tableControl);
         tableControl.setPatientTableUI(tableUI);
         loginController.setNextScreen(tableControl, tableUI);
-        testHarnessGo();
         // tableControl.show();
     }
 
     public static void testHarnessGo() {
 
-        ArrayList<Integer> rooms = new ArrayList<Integer>();
-        ArrayList<Patient> pList = new ArrayList<Patient>();
-        ArrayList<Nurse> nurseList = new ArrayList<>();
-        ArrayList<Doctor> doctorList = new ArrayList<>();
-        ArrayList<Secretary> secList = new ArrayList<>();
-        ArrayList<Pharm> pharmList = new ArrayList<>();
+        // ArrayList<Integer> rooms = new ArrayList<Integer>();
+        // ArrayList<Patient> pList = new ArrayList<Patient>();
+        // ArrayList<Nurse> nurseList = new ArrayList<>();
+        // ArrayList<Doctor> doctorList = new ArrayList<>();
+        // ArrayList<Secretary> secList = new ArrayList<>();
+        // ArrayList<Pharm> pharmList = new ArrayList<>();
 
-        Location testLoc = new Location("testHospital", LocationType.Hospital, "testH", rooms, pList, nurseList , doctorList, secList, pharmList);
-        
-        Patient testPatient = new Patient("testP", "testP", "testPEmail", "123456789", UserType.Patient, "TestP", 123);
         Nurse testNurse = new Nurse("testN", "testN", "testNEmail", "1234567", UserType.Nurse, "testN", 100, testLoc );
         Doctor testDoctor = new Doctor("testD", "testD", "testDEmail", "123456789", UserType.Doctor, "TestD", 101, testLoc);
         Secretary testSecretary = new Secretary("testSec", "testSec", "testSEmail", "1234567", UserType.Secretary, "testSec", 102, testLoc);
@@ -60,12 +70,12 @@ public class App {
         pharmList.add(testPhar);
         testPatient.setInsurance(testInsurance);
 
-        File output = new File("C:\\Users\\Ethan\\OneDrive\\Documents\\GitHub\\Health-Information-System\\PatientInformationManagment\\src\\PatientManagment\\PatientInfo.txt");
-        WriteInfo testWriter = new WriteInfo();
-        testWriter.assembleMap(testPatient);
-        testWriter.write(output);
-        ReadInfo testReader = new ReadInfo();
-        testReader.readString(output);
+        // File output = new File("C:\\Users\\Ethan\\OneDrive\\Documents\\GitHub\\Health-Information-System\\PatientInformationManagment\\src\\PatientManagment\\PatientInfo.txt");
+        // WriteInfo testWriter = new WriteInfo();
+        // testWriter.assembleMap(testPatient);
+        // testWriter.write(output);
+        // ReadInfo testReader = new ReadInfo();
+        // testReader.readString(output);
 
 
         /**

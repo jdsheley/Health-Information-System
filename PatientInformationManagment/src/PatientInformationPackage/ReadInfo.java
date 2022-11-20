@@ -20,13 +20,14 @@ public class ReadInfo {
     private HashMap<String, Integer> ints = new HashMap<>();
     private HashMap<String, Double> doubles = new HashMap<>();
     private ArrayList<HashMap> hashList = new ArrayList<>();
+    private HashMap<String, String> masterList = new HashMap<>();
     private String key;
     private String value;
 
     public ReadInfo() {
     }
 
-    public ArrayList<HashMap> readString(File infoFile) { //HashMap<String, String>
+    public HashMap<String, String> readString(File infoFile) { //HashMap<String, String>
         try (Scanner scnr = new Scanner(infoFile)) {
             while(scnr.hasNextLine()) {
                 String keyPair = scnr.nextLine(); 
@@ -36,6 +37,7 @@ public class ReadInfo {
                     key = keyPair.substring(0, location);
                     value = keyPair.substring(location + 1);
                     System.out.println(key + " " + value);
+                    masterList.put(key, value);
                 }
 
                 switch(key) {
@@ -60,11 +62,11 @@ public class ReadInfo {
             hashList.add(ints);
             hashList.add(doubles);
 
-            return hashList;
+            return masterList;
         } catch (FileNotFoundException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            return hashList;
+            return masterList;
         }
     }
     
