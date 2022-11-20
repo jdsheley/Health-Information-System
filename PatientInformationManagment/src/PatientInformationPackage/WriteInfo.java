@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class WriteInfo {
-    File file;
     HashMap <String, String> strings = new HashMap<>();
     HashMap <String, Integer> ints = new HashMap<>();
     HashMap <String, Double> doubles = new HashMap<>();
@@ -18,15 +17,17 @@ public class WriteInfo {
     HashMap <String, Location> locations = new HashMap<>();
     HashMap <String, ArrayList<String>> arrayLists = new HashMap<>();
     HashMap <String, Date> dates = new HashMap<>();
+    private FileWriter patientWriter;
+    File file;
 
-    public void writeInfo() {
-        
+    public WriteInfo(File file) {
+       this.file = file;
     }
 
 
-    public void write(File file) { //Will rewrite over file
+    public void write() { //Will rewrite over file
         try {
-            try (FileWriter patientWriter = new FileWriter(file)) {
+            try (FileWriter patientWriter = new FileWriter(file, true)) {
                 Iterator<String> stringIT = strings.keySet().iterator();
                 int printCount = 0;
                 while(stringIT.hasNext()) {
@@ -49,6 +50,8 @@ public class WriteInfo {
                     Double value = doubles.get(key);
                     patientWriter.write(key + ":" + value + "\n");
                 }
+
+                patientWriter.write("\n");
             }
             
             // Iterator<String> insuranceIT = insurance.keySet().iterator();
@@ -108,6 +111,7 @@ public class WriteInfo {
         locations.put("currentLoc", patient.getCurrentLoc());
         arrayLists.put("pastPerscriptions", patient.getPastPerscriptions());
         arrayLists.put("pastDiagnosis", patient.getPastDiagnosis()); 
+        write();
     }
 
 }

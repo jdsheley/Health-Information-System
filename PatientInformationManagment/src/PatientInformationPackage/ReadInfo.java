@@ -24,10 +24,11 @@ public class ReadInfo {
     private String key;
     private String value;
 
-    public ReadInfo() {
+    public ReadInfo(File infoFile) {
+        this.infoFile = infoFile;
     }
 
-    public HashMap<String, String> readString(File infoFile) { //HashMap<String, String>
+    public HashMap<String, String> readString() { //HashMap<String, String>
         try (Scanner scnr = new Scanner(infoFile)) {
             while(scnr.hasNextLine()) {
                 String keyPair = scnr.nextLine(); 

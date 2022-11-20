@@ -24,12 +24,21 @@ public class App {
         ArrayList<Pharm> pharmList = new ArrayList<>();
         Location testLoc = new Location("testHospital", LocationType.Hospital, "testH", rooms, pList, nurseList , doctorList, secList, pharmList); 
         Patient testPatient = new Patient("testP", "testP", "testPEmail", "123456789", UserType.Patient, "TestP", 123);
+        Patient testPatient2 = new Patient("testP2", "test2P", "testP2Email", "123456789", UserType.Patient, "TestP", 1234);
         File output = new File("C:\\Users\\Ethan\\OneDrive\\Documents\\GitHub\\Health-Information-System\\PatientInformationManagment\\src\\PatientManagment\\PatientInfo.txt");
-        WriteInfo testWriter = new WriteInfo();
-        testWriter.assembleMap(testPatient);
-        testWriter.write(output);
-        ReadInfo testReader = new ReadInfo();
-        testReader.readString(output);
+        pList.add(testPatient);
+        pList.add(testPatient2);
+
+
+        //Should execute on close 
+        WriteInfo testWriter = new WriteInfo(output);
+        for(int i = 0; i < pList.size(); i++) {
+            testWriter.assembleMap(pList.get(i));
+        }
+
+        //Execute at begining
+        ReadInfo testReader = new ReadInfo(output);
+        testReader.readString();
 
         // login panel, will come firs†
         LoginUI testLogin;
