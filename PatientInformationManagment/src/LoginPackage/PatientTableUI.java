@@ -16,6 +16,7 @@ public class PatientTableUI extends JFrame {
     }
 
     public void initialTableComponents() {
+
         this.setTitle("Patient List");
 
         tablePanel = new JPanel();
@@ -28,6 +29,7 @@ public class PatientTableUI extends JFrame {
         buttonPanel.add(exitButton);
         buttonPanel.add(selectButton);
         buttonPanel.add(newPatientButton);
+        tablePanel.add(patientTable);
         exitButton.addActionListener(new ExitButtonListener());
         selectButton.addActionListener(new SelectButtonListener());
         newPatientButton.addActionListener(new NewPatientButtonListener());

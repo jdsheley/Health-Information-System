@@ -1,7 +1,12 @@
 package LoginPackage;
 
+import java.util.ArrayList;
+
+import PatientManagment.User;
+
 public class PatientTableController {
-    private PatientList thePatientList;
+    private ArrayList<User> patientList;
+    private UserList userList;
     private PatientTableModel thePatientTableModel;
     private PatientTableUI patientTableUI;
     //private PatientController patientCntl;
@@ -14,9 +19,9 @@ public class PatientTableController {
     }
 
     public PatientTableController() {
-        thePatientList = new PatientList();
-        thePatientTableModel = new PatientTableModel(thePatientList.getThePatientArrayList());
-
+        userList = new UserList();
+        patientList = userList.getListOfUsers();
+        thePatientTableModel = new PatientTableModel(patientList);
     }
 
     public void show(PatientTableUI tableUI) {
