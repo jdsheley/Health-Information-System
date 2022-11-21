@@ -21,8 +21,8 @@ public class Patient extends User{
     private Insurance insurance;// Insurance provider, can be altered by get and set methods
     private Location pharm; // The pharmacy that they prefer already in system
     private Location gp; // The gp they use already in system
-    private Location currentLoc; // Their current location and systme they are in. IE if they enter a hospital or different GP
-    private ArrayList<String> pastPerscriptions;
+    private Location currentLoc; // Their current location and system they are in. IE if they enter a hospital or different GP
+    private ArrayList<String> pastPrescriptions;
     private ArrayList<String> pastDiagnosis;
 
     
@@ -36,12 +36,12 @@ public class Patient extends User{
 
     public ArrayList<String> getPastPerscriptions()
     {
-        return this.pastPerscriptions;
+        return this.pastPrescriptions;
     }
 
     public void setPastPerscriptions(ArrayList<String> pastPerscriptions)
     {
-        this.pastPerscriptions = pastPerscriptions;
+        this.pastPrescriptions = pastPerscriptions;
     }
     public ArrayList<String> getPastDiagnosis()
     {
