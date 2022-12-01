@@ -24,7 +24,7 @@ public class App {
         ArrayList<Pharm> pharmList = new ArrayList<>();
         Location testLoc = new Location("testHospital", LocationType.Hospital, "testH", rooms, pList, nurseList , doctorList, secList, pharmList); 
         Patient testPatient = new Patient("testP", "testP", "testPEmail", "123456789", UserType.Patient, "TestP", 123);
-        Patient testPatient2 = new Patient("testP2", "test2P", "testP2Email", "123456789", UserType.Patient, "TestP", 1234);
+        Patient testPatient2 = new Patient("testP2", "test2P", "testP2Email", "123456789", UserType.Patient, "TestP2", 1234);
         File output = new File("C:\\Users\\Ethan\\OneDrive\\Documents\\GitHub\\Health-Information-System\\PatientInformationManagment\\src\\PatientManagment\\PatientInfo.txt");
         pList.add(testPatient);
         pList.add(testPatient2);
@@ -38,13 +38,14 @@ public class App {
 
         //Execute at begining
         ReadInfo testReader = new ReadInfo(output);
-        testReader.readString();
+        ArrayList<Patient> patientList = new ArrayList<>();
+        patientList = testReader.readString();
 
         // login panel, will come firs†
         LoginUI testLogin;
         LoginController loginController;
         PatientTableUI tableUI;
-        PatientTableController tableControl = new PatientTableController();
+        PatientTableController tableControl = new PatientTableController(patientList);
         loginController = new LoginController();
         testLogin = new LoginUI(loginController);
         loginController.showLoginUI(testLogin);

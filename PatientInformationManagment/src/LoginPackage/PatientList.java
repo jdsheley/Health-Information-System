@@ -1,6 +1,6 @@
 package LoginPackage;
 
-import PatientManagment.User;
+import PatientManagment.*;
 import PatientManagment.UserType;
 
 import java.util.ArrayList;

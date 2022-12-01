@@ -17,11 +17,19 @@ public class WriteInfo {
     HashMap <String, Location> locations = new HashMap<>();
     HashMap <String, ArrayList<String>> arrayLists = new HashMap<>();
     HashMap <String, Date> dates = new HashMap<>();
-    private FileWriter patientWriter;
     File file;
 
     public WriteInfo(File file) {
        this.file = file;
+        try(FileWriter fileClear = new FileWriter(file, false)) { //This clears the file for the Filewriter in Write() Method
+            fileClear.write("");
+            fileClear.close();
+        }
+        catch (IOException e) {
+            System.out.println("An error occurred in clearing file");
+            e.printStackTrace();
+          }
+
     }
 
 
@@ -29,7 +37,6 @@ public class WriteInfo {
         try {
             try (FileWriter patientWriter = new FileWriter(file, true)) {
                 Iterator<String> stringIT = strings.keySet().iterator();
-                int printCount = 0;
                 while(stringIT.hasNext()) {
                     String key = stringIT.next();
                     String value = strings.get(key);
@@ -51,7 +58,7 @@ public class WriteInfo {
                     patientWriter.write(key + ":" + value + "\n");
                 }
 
-                patientWriter.write("\n");
+                patientWriter.write("/// \n");
             }
             
             // Iterator<String> insuranceIT = insurance.keySet().iterator();
@@ -85,7 +92,7 @@ public class WriteInfo {
         
             System.out.println("Successfully wrote to the file.");
           } catch (IOException e) {
-            System.out.println("An error occurred.");
+            System.out.println("An error occurred in writing to file");
             e.printStackTrace();
           }
     }

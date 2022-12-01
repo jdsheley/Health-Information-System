@@ -1,14 +1,14 @@
 package LoginPackage;
 import PatientInformationPackage.*;
-import PatientManagment.User;
+import PatientManagment.*;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
 
 public class PatientTableModel extends AbstractTableModel {
     private String[] columnNames = {"Patient Name", "Email", "Phone Number"};
-    private ArrayList<User> patientArrayList;
-    public PatientTableModel(ArrayList<User> newPatientArrayList) {
+    private ArrayList<Patient> patientArrayList;
+    public PatientTableModel(ArrayList<Patient> newPatientArrayList) {
         patientArrayList = newPatientArrayList;
     }
 
@@ -36,4 +36,5 @@ public class PatientTableModel extends AbstractTableModel {
     public String getColumnName(int col) {
         return columnNames[col];
     }
+
 }

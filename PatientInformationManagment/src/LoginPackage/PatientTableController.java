@@ -2,10 +2,9 @@ package LoginPackage;
 
 import java.util.ArrayList;
 
-import PatientManagment.User;
+import PatientManagment.*;
 
 public class PatientTableController {
-    private ArrayList<User> patientList;
     private UserList userList;
     private PatientTableModel thePatientTableModel;
     private PatientTableUI patientTableUI;
@@ -18,9 +17,7 @@ public class PatientTableController {
         this.patientTableUI = patientTableUI;
     }
 
-    public PatientTableController() {
-        userList = new UserList();
-        patientList = userList.getListOfUsers();
+    public PatientTableController(ArrayList<Patient> patientList) {
         thePatientTableModel = new PatientTableModel(patientList);
     }
 
@@ -32,4 +29,5 @@ public class PatientTableController {
     public PatientTableModel getThePatientTableModel() {
         return thePatientTableModel;
     }
+
 }
