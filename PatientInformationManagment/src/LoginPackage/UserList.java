@@ -10,16 +10,16 @@ public class UserList {
     private String userFileName = "userFileName.ser";
     Location testLoc = new Location("testHospital", LocationType.Hospital, "testH", null, null, null , null, null, null); 
 
-    public UserList() {
+    public UserList(ArrayList<Patient> patientList) {
         this.readUserListFile();
         if(listOfUsers.isEmpty() || listOfUsers == null){
-            this.createUserList();
+            this.createUserList(patientList);
             this.writeUserListFile();
             this.readUserListFile();
         }
     }
 
-    public void createUserList(){
+    public void createUserList(ArrayList<Patient> patientList){
 
         Nurse u1 = new Nurse("nurse", "password", "nurse@psu.edu", "2157206172", UserType.Nurse, "Joe White", 1234, testLoc);
         listOfUsers.add(u1);
@@ -27,6 +27,10 @@ public class UserList {
         listOfUsers.add(u2);
         Secretary u3 = new Secretary("secretary", "password2", "mary@psu.edu", "0987654321", UserType.Patient, "Mary Williams", 1234, testLoc);
         listOfUsers.add(u3);
+
+        for(int i = 0; i < patientList.size(); i++) {
+            listOfUsers.add(patientList.get(i));
+        }
     }
 
     public void readUserListFile(){

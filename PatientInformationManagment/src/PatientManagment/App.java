@@ -46,7 +46,7 @@ public class App {
         LoginController loginController;
         PatientTableUI tableUI;
         PatientTableController tableControl = new PatientTableController(patientList);
-        loginController = new LoginController();
+        loginController = new LoginController(patientList);
         testLogin = new LoginUI(loginController);
         loginController.showLoginUI(testLogin);
         tableUI = new PatientTableUI(tableControl);

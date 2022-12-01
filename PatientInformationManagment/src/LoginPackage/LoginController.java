@@ -1,5 +1,5 @@
 package LoginPackage;
-
+import java.util.ArrayList;
 import PatientManagment.Patient;
 
 public class LoginController {
@@ -16,8 +16,8 @@ public class LoginController {
         this.listController = listController;
     }
 
-    public LoginController(){
-        theUserList = new UserList();
+    public LoginController(ArrayList<Patient> patientList){
+        theUserList = new UserList(patientList);
     }
 
     public UserList getUserList(){
