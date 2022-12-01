@@ -3,10 +3,12 @@ package LoginPackage;
 import java.io.*;
 import java.util.ArrayList;
 import PatientManagment.*;
+import LocationPackage.Location;
 
 public class UserList {
     private ArrayList<User> listOfUsers = new ArrayList<>();
     private String userFileName = "userFileName.ser";
+    Location testLoc = new Location("testHospital", LocationType.Hospital, "testH", null, null, null , null, null, null); 
 
     public UserList() {
         this.readUserListFile();
@@ -19,11 +21,11 @@ public class UserList {
 
     public void createUserList(){
 
-        User u1 = new User("Joewhite", "password", "joe@psu.edu", "2157206172", UserType.Patient, "Joe White");
+        Nurse u1 = new Nurse("nurse", "password", "nurse@psu.edu", "2157206172", UserType.Nurse, "Joe White", 1234, testLoc);
         listOfUsers.add(u1);
-        User u2 = new User("JohnS", "password1", "john@psu.edu", "1234567890", UserType.Patient, "John Smith");
+        Doctor u2 = new Doctor("doctor", "password", "doctor@psu.edu", "1234567890", UserType.Doctor, "John Smith", 1234, testLoc);
         listOfUsers.add(u2);
-        User u3 = new User("MaryW", "password2", "mary@psu.edu", "0987654321", UserType.Patient, "Mary Williams");
+        Secretary u3 = new Secretary("secretary", "password2", "mary@psu.edu", "0987654321", UserType.Patient, "Mary Williams", 1234, testLoc);
         listOfUsers.add(u3);
     }
 
