@@ -1,21 +1,14 @@
 package LoginPackage;
 import java.util.ArrayList;
-import PatientManagment.Patient;
+import PatientManagment.*;
 
 public class LoginController {
     private LoginUI theLoginUI;
     private UserList theUserList;
     PatientTableUI patientTable;
-    PatientTableController listController;
-
-    public PatientTableController getListController() {
-        return this.listController;
-    }
-
-    public void setListController(PatientTableController listController) {
-        this.listController = listController;
-    }
-
+    PatientTableController controller;
+    PatientTableUI tableUI;
+    
     public LoginController(ArrayList<Patient> patientList){
         theUserList = new UserList(patientList);
     }
@@ -30,20 +23,20 @@ public class LoginController {
         theLoginUI.showTest();
     }
     
-    public void requestAuthenticate(String userName, String password){
+    public void requestAuthenticate(String userName, String password){ //Add another screen option for the patient view
         if(theUserList.authenticate(userName, password)==true){
             System.out.println("Valid user");
             theLoginUI.close();
-            setNextScreen(listController, patientTable);
+            controller.show(tableUI);
         }
         else
             System.out.println("Invalid username/password");
 
     }
 
-    public void setNextScreen(PatientTableController controller, PatientTableUI tableUI) {
+    public void setNextScreen() {
         System.out.println("Show table UI");
-        controller.show(tableUI);
+        
     }
 
     public void requestVerify(String captchaString){
@@ -54,5 +47,20 @@ public class LoginController {
             System.out.println("Invalid Captcha");
         }
     }
-    
+
+    public PatientTableController getController() {
+        return this.controller;
+    }
+
+    public void setController(PatientTableController controller) {
+        this.controller = controller;
+    }
+
+    public PatientTableUI getTableUI() {
+        return this.tableUI;
+    }
+
+    public void setTableUI(PatientTableUI tableUI) {
+        this.tableUI = tableUI;
+    }
 }

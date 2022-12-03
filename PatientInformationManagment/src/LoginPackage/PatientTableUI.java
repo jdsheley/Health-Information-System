@@ -1,18 +1,24 @@
 package LoginPackage;
 
 import javax.swing.*;
+
+import PatientManagment.Patient;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class PatientTableUI extends JFrame {
     private JPanel tablePanel, buttonPanel;
     private JTable patientTable;
     private JButton exitButton, selectButton, newPatientButton;
     private PatientTableController patientTableCntl;
+    private ArrayList<Patient> patientList;
 
-    public PatientTableUI(PatientTableController patientTableCntl) {
+    public PatientTableUI(PatientTableController patientTableCntl, ArrayList<Patient> patientList) {
         this.patientTableCntl = patientTableCntl;
+        this.patientList = patientList;
     }
 
     public void initialTableComponents() {
@@ -22,7 +28,10 @@ public class PatientTableUI extends JFrame {
         tablePanel = new JPanel();
         buttonPanel = new JPanel(new GridLayout(1, 4));
         patientTable = new JTable(patientTableCntl.getThePatientTableModel());
-        patientTable.getColumnModel().getColumn(0).setPreferredWidth(35);
+        patientTable.getColumnModel().getColumn(0).setPreferredWidth(200);
+        patientTable.getColumnModel().getColumn(1).setPreferredWidth(200);
+        patientTable.getColumnModel().getColumn(2).setPreferredWidth(200);
+        patientTable.setRowSelectionAllowed(true);
         exitButton = new JButton("Exit");
         selectButton = new JButton("Select");
         newPatientButton = new JButton("New");
@@ -57,8 +66,12 @@ public class PatientTableUI extends JFrame {
     public class SelectButtonListener implements ActionListener {
 
         @Override
-        public void actionPerformed(ActionEvent e) {
-
+        public void actionPerformed(ActionEvent e) { //Someone use this to open the next page and return the patient that is selected 
+            int column = 0;
+            int row = patientTable.getSelectedRow();
+            String name = patientTable.getModel().getValueAt(row, column).toString();
+            System.out.println(name);
+            patientTableCntl.getSelectedPatient(name, patientList);
         }
     }
 
