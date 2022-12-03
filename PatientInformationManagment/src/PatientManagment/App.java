@@ -49,9 +49,11 @@ public class App {
         loginController = new LoginController(patientList);
         testLogin = new LoginUI(loginController);
         loginController.showLoginUI(testLogin);
-        tableUI = new PatientTableUI(tableControl);
+        tableUI = new PatientTableUI(tableControl, patientList);
         tableControl.setPatientTableUI(tableUI);
-        loginController.setNextScreen(tableControl, tableUI);
+        loginController.setController(tableControl);
+        loginController.setTableUI(tableUI);
+
         // tableControl.show();
     }
 
