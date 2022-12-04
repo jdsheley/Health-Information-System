@@ -49,6 +49,7 @@ public class App {
         loginController = new LoginController(patientList);
         testLogin = new LoginUI(loginController);
         loginController.showLoginUI(testLogin);
+
         //tableUI = new PatientTableUI(tableControl, patientList);
         tableUI = new PatientTableUI(tableControl, patientList);
         tableControl.setPatientTableUI(tableUI);
@@ -56,6 +57,7 @@ public class App {
         loginController.setTableUI(tableUI);
 
         // tableControl.show();
+
     }
 
     // public static void testHarnessGo() {
