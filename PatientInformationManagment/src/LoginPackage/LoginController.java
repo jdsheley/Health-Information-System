@@ -8,6 +8,7 @@ public class LoginController {
     PatientTableUI patientTable;
     PatientTableController controller;
     PatientTableUI tableUI;
+    User currentUser;
     
     public LoginController(ArrayList<Patient> patientList){
         theUserList = new UserList(patientList);
@@ -28,10 +29,21 @@ public class LoginController {
             System.out.println("Valid user");
             theLoginUI.close();
             controller.show(tableUI);
+
+            for(int i = 0; i < theUserList.getListOfUsers().size(); i++) { //sets current user to the user that is logged in to find account type
+                if(theUserList.getListOfUsers().get(i).getUsername().equals(userName) && theUserList.getListOfUsers().get(i).getPassword().equals(password)) {
+                    currentUser = theUserList.getListOfUsers().get(i);
+                    System.out.println("current user is: " + currentUser.getName());
+                }
+            }
         }
         else
             System.out.println("Invalid username/password");
 
+    }
+
+    public User getCurrentUser() {
+        return currentUser;
     }
 
     public void setNextScreen() {
