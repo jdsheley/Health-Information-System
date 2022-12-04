@@ -71,12 +71,16 @@ public class PatientTableUI extends JFrame {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-
             System.out.println("Button");
-            int column = 0;
-            int row = patientTable.getSelectedRow();
-            String name = patientTable.getModel().getValueAt(row, column).toString();
-            patientTableCntl.getSelectedPatient(name);
+            int selectedTableRow = patientTable.getSelectedRow();
+            int selectedModelRow = patientTable.convertRowIndexToModel(selectedTableRow);
+            if(selectedModelRow < 0)
+                selectedModelRow = 0;
+            PatientTableUI.this.patientTableCntl.getPatientDetailUI(selectedModelRow);
+
+
+            //String name = patientTable.getModel().getValueAt(selectedModelRow, column).toString();
+            //patientTableCntl.getSelectedPatient(name);
 
         }
     }

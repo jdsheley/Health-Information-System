@@ -2,11 +2,16 @@ package LoginPackage;
 
 import java.util.ArrayList;
 import PatientManagment.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class PatientTableController {
+
+public class PatientTableController implements ActionListener{
     private PatientTableModel thePatientTableModel;
     private PatientTableUI patientTableUI;
     private Patient currentPatient;
+    private PatientDetailsUI patientDetailsUI;
+    private PatientList thePatientList;
 
 
     private ArrayList<Patient> patientList;
@@ -17,6 +22,19 @@ public class PatientTableController {
     public PatientTableUI getPatientTableUI() {
         return patientTableUI;
     }
+
+    public PatientTableController(){
+        thePatientList = new PatientList();
+        //patientTableUI = new PatientTableUI(this);
+
+
+    }
+
+
+
+
+
+
     public void setPatientTableUI(PatientTableUI patientTableUI) {
         this.patientTableUI = patientTableUI;
     }
@@ -26,7 +44,10 @@ public class PatientTableController {
         this.patientList = patientList;
 
         thePatientTableModel = new PatientTableModel(patientList);
+
     }
+
+
 
     public void show(PatientTableUI tableUI) {
         tableUI.showTable();
@@ -34,6 +55,10 @@ public class PatientTableController {
 
     public PatientTableModel getThePatientTableModel() {
         return thePatientTableModel;
+    }
+
+    public PatientList getPatientList(){
+        return thePatientList;
     }
 
 
@@ -52,5 +77,19 @@ public class PatientTableController {
         }
 
     }
+    public void getPatientDetailUI(int selectedRow) {
+        patientTableUI.dispose();
+        patientTableUI.setVisible(false);
+        new PatientDetailsController(this, selectedRow);
 
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        Object obj = e.getSource();
+        if (obj == patientDetailsUI.getDoneButton()){
+            patientDetailsUI.setVisible(false);
+        }
+    }
 }
+
