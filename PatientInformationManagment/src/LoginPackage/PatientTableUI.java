@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import PatientManagment.*;
 import java.util.ArrayList;
 
+
 public class PatientTableUI extends JFrame {
     private JPanel tablePanel, buttonPanel;
     private JTable patientTable;
@@ -14,9 +15,11 @@ public class PatientTableUI extends JFrame {
     private PatientTableController patientTableCntl;
     private JScrollPane tableScroller;
 
+
     public PatientTableUI(PatientTableController patientTableCntl, ArrayList<Patient> patientList) {
         this.patientTableCntl = patientTableCntl;
         //initialTableComponents();
+
     }
 
     public void initialTableComponents() {
@@ -68,11 +71,13 @@ public class PatientTableUI extends JFrame {
 
         @Override
         public void actionPerformed(ActionEvent e) {
+
             System.out.println("Button");
             int column = 0;
             int row = patientTable.getSelectedRow();
             String name = patientTable.getModel().getValueAt(row, column).toString();
             patientTableCntl.getSelectedPatient(name);
+
         }
     }
 

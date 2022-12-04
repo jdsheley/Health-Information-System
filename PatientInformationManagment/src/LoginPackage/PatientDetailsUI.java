@@ -4,6 +4,7 @@ import javax.swing.*;
 
 public class PatientDetailsUI extends JFrame{
 
+    private PatientDetailsController patientDetailsController;
 
     private JPanel panel1;
     private JButton saveButton;

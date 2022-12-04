@@ -7,7 +7,9 @@ public class PatientTableController {
     private PatientTableModel thePatientTableModel;
     private PatientTableUI patientTableUI;
     private Patient currentPatient;
+
     private ArrayList<Patient> patientList;
+
     //private PatientController patientCntl;
 
     public PatientTableUI getPatientTableUI() {
@@ -18,7 +20,9 @@ public class PatientTableController {
     }
 
     public PatientTableController(ArrayList<Patient> patientList) {
+
         this.patientList = patientList;
+
         thePatientTableModel = new PatientTableModel(patientList);
     }
 
@@ -30,7 +34,9 @@ public class PatientTableController {
         return thePatientTableModel;
     }
 
+
     public void getSelectedPatient(String patientName) {
+
         System.out.println(patientList.size());
         
             System.out.println("Before if statement");

@@ -11,6 +11,15 @@ public class PatientInfoTable extends AbstractTableModel{
         this.currentPatient = currentPatient;
     }
 
+    @Override
+    public int getRowCount() {
+        return patientArrayList.size();
+    }
+
+    @Override
+    public int getColumnCount() {
+        return columnNames.length;
+    }
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
@@ -25,16 +34,8 @@ public class PatientInfoTable extends AbstractTableModel{
     }
 
     @Override
-    public int getRowCount() {
-        // TODO Auto-generated method stub
-        return 0;
+    public String getColumnName(int col) {
+        return columnNames[col];
     }
-
-    @Override
-    public int getColumnCount() {
-        // TODO Auto-generated method stub
-        return 0;
-    }
-
     
 }
