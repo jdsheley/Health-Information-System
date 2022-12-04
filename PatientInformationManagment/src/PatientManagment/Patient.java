@@ -12,7 +12,7 @@ public class Patient extends User{
     private String heartRate; // Set by nurse
     private String bloodPressure; // Set by nurse
     private String diagnosis; // Set by doctor
-    private String perscription; // Doctor sets this, Pharm views it
+    private String prescription; // Doctor sets this, Pharm views it
     private Status status; // Set by secretary, clears when patient leaves
     private Date futureAppointment; // Secretary set
     private int room; // Set by nurse clears when patient leaves
@@ -68,8 +68,8 @@ public class Patient extends User{
     * View diagnosis from doctor */
     
     public void viewPrescription(Patient patient) {
-        perscription = patient.getPerscription();
-        System.out.println(perscription);
+        prescription = patient.getPerscription();
+        System.out.println(prescription);
     } /** 
     * View Prescription */
     
@@ -200,7 +200,7 @@ public class Patient extends User{
      * @return String
      */
     public String getPerscription() {
-        return this.perscription;
+        return this.prescription;
     }
 
     
@@ -208,7 +208,7 @@ public class Patient extends User{
      * @param prescription
      */
     public void setPerscription(String prescription) {
-        this.perscription = prescription;
+        this.prescription = prescription;
     }
 
     
