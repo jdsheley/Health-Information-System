@@ -53,4 +53,7 @@ public class PatientTableController {
 
     }
 
+    public void populatePatientField(PatientTableController patientTableController, int rowNum){
+        // Do this
+    }
 }

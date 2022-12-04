@@ -367,11 +367,12 @@ public class PatientDetailsUI extends JFrame{
         this.pastDiagnosisLabel = pastDiagnosisLabel;
     }
 
+    // Why are we passing in a PatientTableController???? Doesn't this method involve patient details, not patient table?
     public PatientDetailsUI(PatientTableController patientTableController, int rowNum){
         setSize(800, 400);
         setLocationRelativeTo(null);
         add(panel1);
-        populatePatientField(rowNum, patientTableController);
+        patientTableController.populatePatientField(patientTableController, rowNum);
     }
 
 
