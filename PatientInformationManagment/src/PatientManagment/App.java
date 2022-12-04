@@ -8,13 +8,14 @@ import java.util.Scanner;
 //import PatientInformationPackage.*;
 
 
+
 /** 
  * This will hold the main contents of the app
  */
 
 public class App {
      
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         //Removed from testharness 
         ArrayList<Integer> rooms = new ArrayList<Integer>();
         ArrayList<Patient> pList = new ArrayList<Patient>();
