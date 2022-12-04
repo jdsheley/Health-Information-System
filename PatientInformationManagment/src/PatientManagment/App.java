@@ -8,13 +8,14 @@ import java.util.Scanner;
 //import PatientInformationPackage.*;
 
 
+
 /** 
  * This will hold the main contents of the app
  */
 
 public class App {
      
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         //Removed from testharness 
         ArrayList<Integer> rooms = new ArrayList<Integer>();
         ArrayList<Patient> pList = new ArrayList<Patient>();
@@ -25,7 +26,7 @@ public class App {
         Location testLoc = new Location("testHospital", LocationType.Hospital, "testH", rooms, pList, nurseList , doctorList, secList, pharmList); 
         Patient testPatient = new Patient("testP", "testP", "testPEmail", "123456789", UserType.Patient, "TestP", 123);
         Patient testPatient2 = new Patient("testP2", "test2P", "testP2Email", "123456789", UserType.Patient, "TestP2", 1234);
-        File output = new File("C:\\Users\\Ethan\\OneDrive\\Documents\\GitHub\\Health-Information-System\\PatientInformationManagment\\src\\PatientManagment\\PatientInfo.txt");
+        File output = new File("../PatientInfo.txt");
         pList.add(testPatient);
         pList.add(testPatient2);
 
