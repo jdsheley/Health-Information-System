@@ -36,6 +36,6 @@ public class PatientDetailsController {
     }
 
     public void showPatientDetailsUI() {
-        thePatientDetailsUI.setVisible(true);
+        thePatientDetailsUI.makeVisable();
     }
 }
