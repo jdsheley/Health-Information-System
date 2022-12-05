@@ -372,7 +372,7 @@ public class PatientDetailsUI extends JFrame {
 //        setSize(800, 1000);
 //        setLocationRelativeTo(null);
 //        add(panel1);
-        makeVisable();
+        //makeVisable();
         //populatePatientField(selectedRow, patientDetailsController);
     }
 
@@ -427,8 +427,6 @@ public class PatientDetailsUI extends JFrame {
         this.setContentPane(new JPanel(new BorderLayout()));
         this.getContentPane().add(buttonPanel, BorderLayout.SOUTH);
         this.getContentPane().add(infoPanel, BorderLayout.CENTER);
-
-        panel1.setVisible(true);
         infoPanel.setVisible(true);
 
 

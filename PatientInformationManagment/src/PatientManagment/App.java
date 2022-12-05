@@ -30,17 +30,17 @@ public class App {
         pList.add(testPatient);
         pList.add(testPatient2);
 
-
         //Should execute on close 
         WriteInfo testWriter = new WriteInfo(output);
         for(int i = 0; i < pList.size(); i++) {
-            testWriter.assembleMap(pList.get(i));
+            WriteInfo.assembleMap(pList.get(i));
         }
 
         //Execute at begining
         ReadInfo testReader = new ReadInfo(output);
         ArrayList<Patient> patientList = new ArrayList<>();
         patientList = testReader.readString();
+
 
         // login panel, will come firs†
         LoginUI testLogin;
@@ -50,10 +50,12 @@ public class App {
         loginController = new LoginController(patientList);
         testLogin = new LoginUI(loginController);
         loginController.showLoginUI(testLogin);
-
+        
         //tableUI = new PatientTableUI(tableControl, patientList);
         tableUI = new PatientTableUI(tableControl, patientList);
+        tableUI.setPatientList(patientList);
         tableControl.setPatientTableUI(tableUI);
+        tableControl.setFile(output);
         loginController.setController(tableControl);
         loginController.setTableUI(tableUI);
         PatientDetailsController patientDetailCont = new PatientDetailsController(tableControl);

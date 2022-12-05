@@ -4,7 +4,7 @@ password:testP
 address:null
 heartRate:null
 name:TestP
-diagnosis:null
+diagnosis:123456789
 phoneNum:123456789
 perscription:null
 email:testPEmail
@@ -18,7 +18,7 @@ password:test2P
 address:null
 heartRate:null
 name:TestP2
-diagnosis:null
+diagnosis:123456789
 phoneNum:123456789
 perscription:null
 email:testP2Email

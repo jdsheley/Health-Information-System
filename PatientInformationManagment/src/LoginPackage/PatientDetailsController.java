@@ -37,12 +37,6 @@ public class PatientDetailsController {
 
     public void showPatientDetailsUI() {
         thePatientDetailsUI.makeVisable();
-<<<<<<< Updated upstream
-=======
+        System.out.println("Showw");
     }
-    
-    public void populatePatientField(PatientDetailsController patientDetailsController, int rowNum){
-        // Fill this
-    }
->>>>>>> Stashed changes
-    }
+}
