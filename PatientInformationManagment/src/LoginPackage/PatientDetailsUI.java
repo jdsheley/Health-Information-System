@@ -367,6 +367,7 @@ public class PatientDetailsUI extends JFrame{
         this.pastDiagnosisLabel = pastDiagnosisLabel;
     }
 
+<<<<<<< Updated upstream
     public PatientDetailsUI(PatientDetailsController newPatientDetailsController){
         setSize(800, 400);
         setLocationRelativeTo(null);
@@ -382,6 +383,13 @@ public class PatientDetailsUI extends JFrame{
         panel1 = new JPanel();
 
         panel1.setVisible(true);
+=======
+    public PatientDetailsUI(PatientDetailsController patientDetailsController, int rowNum){
+        setSize(800, 400);
+        setLocationRelativeTo(null);
+        add(panel1);
+        patientDetailsController.populatePatientField(patientDetailsController, rowNum);
+>>>>>>> Stashed changes
     }
 
 
