@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import PatientManagment.*;
 import java.util.ArrayList;
+import PatientInformationPackage.WriteInfo;
 
 
 public class PatientTableUI extends JFrame {
@@ -89,9 +90,17 @@ public class PatientTableUI extends JFrame {
 
         @Override
         public void actionPerformed(ActionEvent e) {
+            
+            //Creates a new patient. Also might display the new patient at some point, once I decide where to implement that.
 
+            //This line creates a new patient with hardcoded info. Someone needs to make a UI that allows the user to input the info instead.
+            Patient patient = new Patient("testuser3", "password", "abc@123.com", "1231231234", UserType.Patient, "Jeff", 0);
+            WriteInfo.assembleMap(patient);
         }
+        
     }
+
+    
 
 
 }

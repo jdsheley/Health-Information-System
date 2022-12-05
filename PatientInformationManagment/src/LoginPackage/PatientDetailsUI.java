@@ -3,7 +3,7 @@ package LoginPackage;
 import javax.swing.*;
 import java.awt.*;
 
-public class PatientDetailsUI extends JFrame{
+public class PatientDetailsUI extends JFrame {
 
     private PatientDetailsController patientDetailsController;
 
@@ -368,7 +368,7 @@ public class PatientDetailsUI extends JFrame{
         this.pastDiagnosisLabel = pastDiagnosisLabel;
     }
 
-    public PatientDetailsUI(PatientDetailsController newPatientDetailsController){
+    public PatientDetailsUI(PatientDetailsController newPatientDetailsController) {
 //        setSize(800, 1000);
 //        setLocationRelativeTo(null);
 //        add(panel1);
@@ -376,7 +376,7 @@ public class PatientDetailsUI extends JFrame{
         //populatePatientField(selectedRow, patientDetailsController);
     }
 
-    public void populatePatientField(int selectedRow, PatientDetailsController patientDetailsController){
+    public void populatePatientField(int selectedRow, PatientDetailsController patientDetailsController) {
         //nameTextField.setText("" + patientDetailsController
     }
 
@@ -432,7 +432,13 @@ public class PatientDetailsUI extends JFrame{
         infoPanel.setVisible(true);
 
 
+//    public PatientDetailsUI(PatientDetailsController patientDetailsController, int rowNum){
+//        setSize(800, 400);
+//        setLocationRelativeTo(null);
+//        add(panel1);
+//        patientDetailsController.populatePatientField(patientDetailsController, rowNum);
+//    }
+
+
     }
-
-
 }

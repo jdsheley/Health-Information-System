@@ -10,14 +10,14 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class WriteInfo {
-    HashMap <String, String> strings = new HashMap<>();
-    HashMap <String, Integer> ints = new HashMap<>();
-    HashMap <String, Double> doubles = new HashMap<>();
-    HashMap <String, Insurance> insurance = new HashMap<>();
-    HashMap <String, Location> locations = new HashMap<>();
-    HashMap <String, ArrayList<String>> arrayLists = new HashMap<>();
-    HashMap <String, Date> dates = new HashMap<>();
-    File file;
+    public static HashMap <String, String> strings = new HashMap<>();
+    public static HashMap <String, Integer> ints = new HashMap<>();
+    public static HashMap <String, Double> doubles = new HashMap<>();
+    public static HashMap <String, Insurance> insurance = new HashMap<>();
+    public static HashMap <String, Location> locations = new HashMap<>();
+    public static HashMap <String, ArrayList<String>> arrayLists = new HashMap<>();
+    public static HashMap <String, Date> dates = new HashMap<>();
+    static File file;
 
     public WriteInfo(File file) {
        this.file = file;
@@ -33,7 +33,7 @@ public class WriteInfo {
     }
 
 
-    public void write() { //Will rewrite over file
+    public static void write() { //Will rewrite over file
         try {
             try (FileWriter patientWriter = new FileWriter(file, true)) {
                 Iterator<String> stringIT = strings.keySet().iterator();
@@ -97,7 +97,11 @@ public class WriteInfo {
           }
     }
 
-    public void assembleMap(Patient patient) {
+
+    public static void assembleMap(Patient patient) {
+
+        // This is what gets written to PatientInfo.txt
+
         strings.put("name",patient.getName());
         strings.put("username", patient.getUsername());
         strings.put("password", patient.getPassword());
