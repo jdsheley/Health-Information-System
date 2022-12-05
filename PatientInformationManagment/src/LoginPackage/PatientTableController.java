@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
-public class PatientTableController implements ActionListener{
+public class PatientTableController {
     private PatientTableModel thePatientTableModel;
     private PatientTableUI patientTableUI;
     private Patient currentPatient;

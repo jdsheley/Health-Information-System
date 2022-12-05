@@ -9,7 +9,7 @@ public class PatientInfoView {
 
     private void createUIComponents() {
         tablePanel = new JPanel();
-        buttonPanel = new JPanel(new GridLayout(1, 4));
+        //buttonPanel = new JPanel(new GridLayout(1, 4));
         //patientTable = new JTable(null, null)
     }
 }

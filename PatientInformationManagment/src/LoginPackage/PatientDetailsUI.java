@@ -1,12 +1,13 @@
 package LoginPackage;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class PatientDetailsUI extends JFrame{
 
     private PatientDetailsController patientDetailsController;
 
-    private JPanel panel1;
+    private JPanel panel1, infoPanel, buttonPanel;
     private JButton saveButton;
     private JTextField nameTextField;
     private JTextField symptomsTextField;
@@ -24,28 +25,28 @@ public class PatientDetailsUI extends JFrame{
     private JTextField currentLocationTextField;
     private JTextField pastPrescriptionsTextField;
     private JTextField pastDiagnosisTextField;
-    private JLabel addressLabel;
+    private JLabel addressLabel = new JLabel("Address");
     private JButton doneButton;
     private JButton deletePatientButton;
-    private JLabel nameLabel;
+    private JLabel nameLabel = new JLabel("Name");
     private JTextField addressTextField;
     private JTextField bloodPressureTextField;
-    private JLabel symptomsLabel;
-    private JLabel heartRateLabel;
-    private JLabel bloodPressureLabel;
-    private JLabel diagnosisLabel;
-    private JLabel prescriptionLabel;
-    private JLabel statusLabel;
-    private JLabel futureAppointmentLabel;
-    private JLabel roomLabel;
-    private JLabel IDLabel;
-    private JLabel billLabel;
-    private JLabel insuranceLabel;
-    private JLabel pharmLabel;
-    private JLabel GPLabel;
-    private JLabel currentLocationLabel;
-    private JLabel pastPrescriptionsLabel;
-    private JLabel pastDiagnosisLabel;
+    private JLabel symptomsLabel = new JLabel("Symptoms");
+    private JLabel heartRateLabel = new JLabel("Heart Rate");
+    private JLabel bloodPressureLabel = new JLabel("Blood Pressure");
+    private JLabel diagnosisLabel = new JLabel("Diagnosis");
+    private JLabel prescriptionLabel = new JLabel("Prescription");
+    private JLabel statusLabel = new JLabel("Status");
+    private JLabel futureAppointmentLabel = new JLabel("Future Appointment");
+    private JLabel roomLabel = new JLabel("Room");
+    private JLabel IDLabel = new JLabel("ID");
+    private JLabel billLabel = new JLabel("Bill");
+    private JLabel insuranceLabel = new JLabel("Insurance");
+    private JLabel pharmLabel = new JLabel("Pharmacy");
+    private JLabel GPLabel = new JLabel("GP");
+    private JLabel currentLocationLabel = new JLabel("Current Location");
+    private JLabel pastPrescriptionsLabel = new JLabel("Past Prescriptions");
+    private JLabel pastDiagnosisLabel = new JLabel("Past Diagnosis");
 
     public JPanel getPanel1() {
         return panel1;
@@ -368,9 +369,10 @@ public class PatientDetailsUI extends JFrame{
     }
 
     public PatientDetailsUI(PatientDetailsController newPatientDetailsController){
-        setSize(800, 400);
-        setLocationRelativeTo(null);
-        add(panel1);
+//        setSize(800, 1000);
+//        setLocationRelativeTo(null);
+//        add(panel1);
+        makeVisable();
         //populatePatientField(selectedRow, patientDetailsController);
     }
 
@@ -381,7 +383,55 @@ public class PatientDetailsUI extends JFrame{
     public void makeVisable() {
         panel1 = new JPanel();
 
+        infoPanel = new JPanel(new GridLayout(9, 4));
+        buttonPanel = new JPanel(new GridLayout(1, 4));
+
+        infoPanel.add(nameLabel);
+        infoPanel.add(nameTextField);
+        infoPanel.add(roomLabel);
+        infoPanel.add(roomTextField);
+        infoPanel.add(addressLabel);
+        infoPanel.add(addressTextField);
+        infoPanel.add(IDLabel);
+        infoPanel.add(IDTextField);
+        infoPanel.add(symptomsLabel);
+        infoPanel.add(symptomsTextField);
+        infoPanel.add(billLabel);
+        infoPanel.add(billTextField);
+        infoPanel.add(heartRateLabel);
+        infoPanel.add(heartRateTextField);
+        infoPanel.add(insuranceLabel);
+        infoPanel.add(insuranceTextFieldTextField);
+        infoPanel.add(bloodPressureLabel);
+        infoPanel.add(bloodPressureTextField);
+        infoPanel.add(pharmLabel);
+        infoPanel.add(pharmTextFieldTextField);
+        infoPanel.add(diagnosisLabel);
+        infoPanel.add(dioagnosisTextField);
+        infoPanel.add(GPLabel);
+        infoPanel.add(GPTextField);
+        infoPanel.add(prescriptionLabel);
+        infoPanel.add(prescriptionTextField);
+        infoPanel.add(currentLocationLabel);
+        infoPanel.add(currentLocationTextField);
+        infoPanel.add(statusLabel);
+        infoPanel.add(statusTextField);
+        infoPanel.add(pastPrescriptionsLabel);
+        infoPanel.add(pastPrescriptionsTextField);
+        infoPanel.add(futureAppointmentLabel);
+        infoPanel.add(futureAppointmentTextField);
+        infoPanel.add(pastDiagnosisLabel);
+        infoPanel.add(pastDiagnosisTextField);
+        this.setSize(800, 1000);
+        this.setLocationRelativeTo(null);
+        this.setContentPane(new JPanel(new BorderLayout()));
+        this.getContentPane().add(buttonPanel, BorderLayout.SOUTH);
+        this.getContentPane().add(infoPanel, BorderLayout.CENTER);
+
         panel1.setVisible(true);
+        infoPanel.setVisible(true);
+
+
     }
 
 

@@ -41,9 +41,9 @@ public class testHarness {
         pharmList.add(testPhar);
         testPatient.setInsurance(testInsurance);
 
-        WriteInfo testWriter = new WriteInfo();
-        testWriter.assembleMap(testPatient);
-        testWriter.write();
+//        WriteInfo testWriter = new WriteInfo();
+//        testWriter.assembleMap(testPatient);
+//        testWriter.write();
 
 
         /**
