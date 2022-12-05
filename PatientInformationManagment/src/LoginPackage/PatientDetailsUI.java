@@ -367,11 +367,11 @@ public class PatientDetailsUI extends JFrame{
         this.pastDiagnosisLabel = pastDiagnosisLabel;
     }
 
-    public PatientDetailsUI(PatientDetailsController newPatientDetailsController, int selectedRow){
+    public PatientDetailsUI(PatientDetailsController newPatientDetailsController){
         setSize(800, 400);
         setLocationRelativeTo(null);
         add(panel1);
-        populatePatientField(selectedRow, patientDetailsController);
+        //populatePatientField(selectedRow, patientDetailsController);
     }
 
     public void populatePatientField(int selectedRow, PatientDetailsController patientDetailsController){

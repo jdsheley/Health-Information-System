@@ -76,7 +76,7 @@ public class PatientTableUI extends JFrame {
             int selectedModelRow = patientTable.convertRowIndexToModel(selectedTableRow);
             if(selectedModelRow < 0)
                 selectedModelRow = 0;
-            PatientTableUI.this.patientTableCntl.getPatientDetailUI(selectedModelRow);
+            //PatientTableUI.this.patientTableCntl.getPatientDetailUI(selectedModelRow);
 
 
             //String name = patientTable.getModel().getValueAt(selectedModelRow, column).toString();

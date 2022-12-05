@@ -7,10 +7,8 @@ public class PatientDetailsController {
     private UserList theUserList;
     private PatientTableController thePatientTableController;
 
-    public PatientDetailsController(PatientTableController thePatientTableController, int row) {
+    public PatientDetailsController(PatientTableController thePatientTableController) {
         this.thePatientTableController = thePatientTableController;
-
-        showPatientDetailsUI();
     }
 
     public PatientTableController getThePatientTableController() {
