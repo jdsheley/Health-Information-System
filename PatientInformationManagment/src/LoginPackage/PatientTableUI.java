@@ -6,7 +6,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import PatientManagment.*;
 import java.util.ArrayList;
-import PatientInformationPackage.WriteInfo;
 
 
 public class PatientTableUI extends JFrame {
@@ -15,6 +14,7 @@ public class PatientTableUI extends JFrame {
     private JButton exitButton, selectButton, newPatientButton;
     private PatientTableController patientTableCntl;
     private JScrollPane tableScroller;
+    private ArrayList<Patient> patientList;
 
 
     public PatientTableUI(PatientTableController patientTableCntl, ArrayList<Patient> patientList) {
@@ -22,6 +22,11 @@ public class PatientTableUI extends JFrame {
         //initialTableComponents();
 
     }
+
+    public void setPatientList(ArrayList<Patient> patientList) {
+        this.patientList = patientList;
+    }
+
 
     public void initialTableComponents() {
 
@@ -72,17 +77,10 @@ public class PatientTableUI extends JFrame {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            System.out.println("Button");
-            int selectedTableRow = patientTable.getSelectedRow();
-            int selectedModelRow = patientTable.convertRowIndexToModel(selectedTableRow);
-            if(selectedModelRow < 0)
-                selectedModelRow = 0;
-            //PatientTableUI.this.patientTableCntl.getPatientDetailUI(selectedModelRow);
-
-
-            //String name = patientTable.getModel().getValueAt(selectedModelRow, column).toString();
-            //patientTableCntl.getSelectedPatient(name);
-
+            int column = 0;
+            int row = patientTable.getSelectedRow();
+            String name = patientTable.getModel().getValueAt(row, column).toString();
+            patientTableCntl.getSelectedPatient(name);
         }
     }
 
@@ -91,11 +89,8 @@ public class PatientTableUI extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             
-            //Creates a new patient. Also might display the new patient at some point, once I decide where to implement that.
-
-            //This line creates a new patient with hardcoded info. Someone needs to make a UI that allows the user to input the info instead.
-            Patient patient = new Patient("testuser3", "password", "abc@123.com", "1231231234", UserType.Patient, "Jeff", 0);
-            WriteInfo.assembleMap(patient);
+            patientTableCntl.addPatient();
+            initialTableComponents();
         }
         
     }
