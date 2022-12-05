@@ -27,19 +27,19 @@ public class App {
         Patient testPatient = new Patient("testP", "testP", "testPEmail", "123456789", UserType.Patient, "TestP", 123);
         Patient testPatient2 = new Patient("testP2", "test2P", "testP2Email", "123456789", UserType.Patient, "TestP2", 1234);
         File output = new File("../PatientInfo.txt");
-        pList.add(testPatient);
-        pList.add(testPatient2);
-
-        //Should execute on close 
-        WriteInfo testWriter = new WriteInfo(output);
-        for(int i = 0; i < pList.size(); i++) {
-            WriteInfo.assembleMap(pList.get(i));
-        }
+        ArrayList<Patient> patientList = new ArrayList<>();
+        patientList.add(testPatient);
+        patientList.add(testPatient2);
 
         //Execute at begining
         ReadInfo testReader = new ReadInfo(output);
-        ArrayList<Patient> patientList = new ArrayList<>();
         patientList = testReader.readString();
+
+        //Should execute on close 
+        WriteInfo testWriter = new WriteInfo(output);
+        for(int i = 0; i < patientList.size(); i++) {
+            WriteInfo.assembleMap(patientList.get(i));
+        }
 
 
         // login panel, will come firs†

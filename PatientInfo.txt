@@ -26,3 +26,17 @@ username:testP2
 id:0
 bill:0.0
 /// 
+symptoms:null
+bloodPressure:null
+password:password
+address:null
+heartRate:null
+name:Jeff
+diagnosis:1231231234
+phoneNum:1231231234
+perscription:null
+email:abc@123.com
+username:testuser3
+id:0
+bill:0.0
+/// 
