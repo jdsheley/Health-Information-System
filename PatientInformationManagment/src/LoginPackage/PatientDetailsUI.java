@@ -378,5 +378,11 @@ public class PatientDetailsUI extends JFrame{
         //nameTextField.setText("" + patientDetailsController
     }
 
+    public void makeVisable() {
+        panel1 = new JPanel();
+
+        panel1.setVisible(true);
+    }
+
 
 }
