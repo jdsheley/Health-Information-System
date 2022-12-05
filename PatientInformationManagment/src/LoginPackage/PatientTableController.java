@@ -77,19 +77,6 @@ public class PatientTableController implements ActionListener{
         }
 
     }
-    public void getPatientDetailUI(int selectedRow) {
-        patientTableUI.dispose();
-        patientTableUI.setVisible(false);
-        new PatientDetailsController(this, selectedRow);
 
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        Object obj = e.getSource();
-        if (obj == patientDetailsUI.getDoneButton()){
-            patientDetailsUI.setVisible(false);
-        }
-    }
 }
 
