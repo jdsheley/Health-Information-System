@@ -2,35 +2,37 @@ package LoginPackage;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class PatientDetailsUI extends JFrame {
 
     private PatientDetailsController patientDetailsController;
 
     private JPanel panel1, infoPanel, buttonPanel;
-    private JButton saveButton;
-    private JTextField nameTextField;
-    private JTextField symptomsTextField;
-    private JTextField heartRateTextField;
-    private JTextField dioagnosisTextField;
-    private JTextField futureAppointmentTextField;
-    private JTextField prescriptionTextField;
-    private JTextField statusTextField;
-    private JTextField roomTextField;
-    private JTextField IDTextField;
-    private JTextField billTextField;
-    private JTextField insuranceTextFieldTextField;
-    private JTextField pharmTextFieldTextField;
-    private JTextField GPTextField;
-    private JTextField currentLocationTextField;
-    private JTextField pastPrescriptionsTextField;
-    private JTextField pastDiagnosisTextField;
+    private JButton saveButton = new JButton("Save");
+    private JTextField nameTextField = new JTextField();
+    private JTextField symptomsTextField = new JTextField();
+    private JTextField heartRateTextField = new JTextField();
+    private JTextField dioagnosisTextField = new JTextField();
+    private JTextField futureAppointmentTextField = new JTextField();
+    private JTextField prescriptionTextField = new JTextField();
+    private JTextField statusTextField = new JTextField();
+    private JTextField roomTextField = new JTextField();
+    private JTextField IDTextField = new JTextField();
+    private JTextField billTextField = new JTextField();
+    private JTextField insuranceTextFieldTextField = new JTextField();
+    private JTextField pharmTextFieldTextField = new JTextField();
+    private JTextField GPTextField = new JTextField();
+    private JTextField currentLocationTextField = new JTextField();
+    private JTextField pastPrescriptionsTextField = new JTextField();
+    private JTextField pastDiagnosisTextField = new JTextField();
     private JLabel addressLabel = new JLabel("Address");
-    private JButton doneButton;
-    private JButton deletePatientButton;
+    private JButton doneButton = new JButton("Done");
+    private JButton deletePatientButton = new JButton("Delete");
     private JLabel nameLabel = new JLabel("Name");
-    private JTextField addressTextField;
-    private JTextField bloodPressureTextField;
+    private JTextField addressTextField = new JTextField();
+    private JTextField bloodPressureTextField = new JTextField();
     private JLabel symptomsLabel = new JLabel("Symptoms");
     private JLabel heartRateLabel = new JLabel("Heart Rate");
     private JLabel bloodPressureLabel = new JLabel("Blood Pressure");
@@ -47,6 +49,8 @@ public class PatientDetailsUI extends JFrame {
     private JLabel currentLocationLabel = new JLabel("Current Location");
     private JLabel pastPrescriptionsLabel = new JLabel("Past Prescriptions");
     private JLabel pastDiagnosisLabel = new JLabel("Past Diagnosis");
+
+    private JScrollPane scroller;
 
     public JPanel getPanel1() {
         return panel1;
@@ -372,7 +376,7 @@ public class PatientDetailsUI extends JFrame {
 //        setSize(800, 1000);
 //        setLocationRelativeTo(null);
 //        add(panel1);
-        makeVisable();
+        makeVisible();
         //populatePatientField(selectedRow, patientDetailsController);
     }
 
@@ -380,7 +384,7 @@ public class PatientDetailsUI extends JFrame {
         //nameTextField.setText("" + patientDetailsController
     }
 
-    public void makeVisable() {
+    public void makeVisible() {
         panel1 = new JPanel();
 
         infoPanel = new JPanel(new GridLayout(9, 4));
@@ -422,11 +426,19 @@ public class PatientDetailsUI extends JFrame {
         infoPanel.add(futureAppointmentTextField);
         infoPanel.add(pastDiagnosisLabel);
         infoPanel.add(pastDiagnosisTextField);
+        buttonPanel.add(saveButton);
+        buttonPanel.add(deletePatientButton);
+        buttonPanel.add(doneButton);
+        //scroller = new JScrollPane(panel1);
+        //scroller.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        //scroller.setPreferredSize(new Dimension(500, 400));
+        //panel1.add(scroller);
         this.setSize(800, 1000);
         this.setLocationRelativeTo(null);
         this.setContentPane(new JPanel(new BorderLayout()));
         this.getContentPane().add(buttonPanel, BorderLayout.SOUTH);
         this.getContentPane().add(infoPanel, BorderLayout.CENTER);
+        this.setVisible(true);
 
         panel1.setVisible(true);
         infoPanel.setVisible(true);
@@ -440,5 +452,30 @@ public class PatientDetailsUI extends JFrame {
 //    }
 
 
+
+    }
+
+    public class SaveButtonListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+        }
+    }
+
+    public class DeleteButtonListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+        }
+    }
+
+    public class DoneButtonListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+        }
     }
 }
