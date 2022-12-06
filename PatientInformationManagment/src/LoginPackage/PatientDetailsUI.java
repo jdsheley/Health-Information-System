@@ -376,7 +376,7 @@ public class PatientDetailsUI extends JFrame {
 //        setSize(800, 1000);
 //        setLocationRelativeTo(null);
 //        add(panel1);
-        makeVisible();
+        //makeVisible();
         //populatePatientField(selectedRow, patientDetailsController);
     }
 

@@ -19,6 +19,8 @@ public class PatientTableController {
     private PatientList thePatientList;
     private ArrayList<Patient> patientList;
     private File file;
+    private PatientDetailsController detailController;
+
 
 
     //private PatientController patientCntl;
@@ -58,6 +60,10 @@ public class PatientTableController {
                 WriteInfo.assembleMap(patientList.get(i));
             }
            
+    }
+
+    public void setDetailController(PatientDetailsController detailController) {
+        this.detailController = detailController;
     }
 
 
@@ -100,7 +106,10 @@ public class PatientTableController {
                     currentPatient = patientList.get(i);
                     System.out.println(currentPatient.getName());
             }
+            detailController.showPatientDetailsUI();
+            patientTableUI.setVisible(false);
         }
+
 
     }
 

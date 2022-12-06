@@ -60,8 +60,9 @@ public class App {
         loginController.setTableUI(tableUI);
         PatientDetailsController patientDetailCont = new PatientDetailsController(tableControl);
         PatientDetailsUI patientDetailUI = new PatientDetailsUI(patientDetailCont);
+        tableControl.setDetailController(patientDetailCont);
         patientDetailCont.setThePatientDetailsUI(patientDetailUI);
-        patientDetailCont.showPatientDetailsUI();
+        //patientDetailCont.showPatientDetailsUI();
 
         // tableControl.show();
 
