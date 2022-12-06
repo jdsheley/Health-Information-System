@@ -106,11 +106,15 @@ public class PatientTableController {
                     currentPatient = patientList.get(i);
                     System.out.println(currentPatient.getName());
             }
-            detailController.showPatientDetailsUI();
+            detailController.showPatientDetailsUI(currentPatient);
             patientTableUI.setVisible(false);
         }
 
 
+    }
+
+    public Patient getCurrentPatient() {
+        return currentPatient;
     }
 
 }

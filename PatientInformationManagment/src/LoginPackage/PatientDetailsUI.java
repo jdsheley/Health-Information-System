@@ -1,6 +1,9 @@
 package LoginPackage;
 
 import javax.swing.*;
+
+import PatientManagment.Patient;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -49,6 +52,7 @@ public class PatientDetailsUI extends JFrame {
     private JLabel currentLocationLabel = new JLabel("Current Location");
     private JLabel pastPrescriptionsLabel = new JLabel("Past Prescriptions");
     private JLabel pastDiagnosisLabel = new JLabel("Past Diagnosis");
+    private Patient currentPatient;
 
     private JScrollPane scroller;
 
@@ -373,59 +377,70 @@ public class PatientDetailsUI extends JFrame {
     }
 
     public PatientDetailsUI(PatientDetailsController newPatientDetailsController) {
-//        setSize(800, 1000);
-//        setLocationRelativeTo(null);
-//        add(panel1);
-        //makeVisible();
-        //populatePatientField(selectedRow, patientDetailsController);
+
     }
 
     public void populatePatientField(int selectedRow, PatientDetailsController patientDetailsController) {
         //nameTextField.setText("" + patientDetailsController
     }
 
+    public void setCurrentPatient(Patient currentPatient) {
+        this.currentPatient = currentPatient;
+    }
+
     public void makeVisible() {
         panel1 = new JPanel();
 
-        infoPanel = new JPanel(new GridLayout(9, 4));
+        infoPanel = new JPanel(new GridLayout(5, 2));
         buttonPanel = new JPanel(new GridLayout(1, 4));
-
+        
+        
         infoPanel.add(nameLabel);
+        nameTextField.setText(currentPatient.getName());
         infoPanel.add(nameTextField);
         infoPanel.add(roomLabel);
+        roomTextField.setText("100");
         infoPanel.add(roomTextField);
         infoPanel.add(addressLabel);
+        addressTextField.setText("100 Hospital Way");
         infoPanel.add(addressTextField);
         infoPanel.add(IDLabel);
+        IDTextField.setText(Integer.toString(currentPatient.getId()));
         infoPanel.add(IDTextField);
         infoPanel.add(symptomsLabel);
+        symptomsTextField.setText(currentPatient.getSymptoms());
         infoPanel.add(symptomsTextField);
         infoPanel.add(billLabel);
+        billTextField.setText(Double.toString(currentPatient.getBill()));
         infoPanel.add(billTextField);
         infoPanel.add(heartRateLabel);
+        heartRateTextField.setText(currentPatient.getHeartRate());
         infoPanel.add(heartRateTextField);
-        infoPanel.add(insuranceLabel);
-        infoPanel.add(insuranceTextFieldTextField);
+        // infoPanel.add(insuranceLabel);
+        // infoPanel.add(insuranceTextFieldTextField); //Remove
         infoPanel.add(bloodPressureLabel);
+        bloodPressureTextField.setText(currentPatient.getBloodPressure());
         infoPanel.add(bloodPressureTextField);
-        infoPanel.add(pharmLabel);
-        infoPanel.add(pharmTextFieldTextField);
+        // infoPanel.add(pharmLabel);
+        // infoPanel.add(pharmTextFieldTextField); //Remove
         infoPanel.add(diagnosisLabel);
+        dioagnosisTextField.setText(currentPatient.getDiagnosis());
         infoPanel.add(dioagnosisTextField);
-        infoPanel.add(GPLabel);
-        infoPanel.add(GPTextField);
+        // infoPanel.add(GPLabel);
+        // infoPanel.add(GPTextField); //Remove
         infoPanel.add(prescriptionLabel);
+        prescriptionTextField.setText(currentPatient.getPerscription());
         infoPanel.add(prescriptionTextField);
-        infoPanel.add(currentLocationLabel);
-        infoPanel.add(currentLocationTextField);
-        infoPanel.add(statusLabel);
-        infoPanel.add(statusTextField);
-        infoPanel.add(pastPrescriptionsLabel);
-        infoPanel.add(pastPrescriptionsTextField);
-        infoPanel.add(futureAppointmentLabel);
-        infoPanel.add(futureAppointmentTextField);
-        infoPanel.add(pastDiagnosisLabel);
-        infoPanel.add(pastDiagnosisTextField);
+        // infoPanel.add(currentLocationLabel);
+        // infoPanel.add(currentLocationTextField); //Remove
+        // infoPanel.add(statusLabel);
+        // infoPanel.add(statusTextField); //Remove
+        // infoPanel.add(pastPrescriptionsLabel);
+        // infoPanel.add(pastPrescriptionsTextField);
+        // infoPanel.add(futureAppointmentLabel);
+        // infoPanel.add(futureAppointmentTextField); //Remove 
+        // infoPanel.add(pastDiagnosisLabel);
+        // infoPanel.add(pastDiagnosisTextField);
         buttonPanel.add(saveButton);
         buttonPanel.add(deletePatientButton);
         buttonPanel.add(doneButton);

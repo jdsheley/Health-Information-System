@@ -6,6 +6,7 @@ public class PatientDetailsController {
     private PatientDetailsUI thePatientDetailsUI;
     private UserList theUserList;
     private PatientTableController thePatientTableController;
+    private Patient currentPatient;
 
     public PatientDetailsController(PatientTableController thePatientTableController) {
         this.thePatientTableController = thePatientTableController;
@@ -35,11 +36,14 @@ public class PatientDetailsController {
         this.theUserList = theUserList;
     }
 
-    public void showPatientDetailsUI() {
+    public void showPatientDetailsUI(Patient currentPatient) {
+        thePatientDetailsUI.setCurrentPatient(currentPatient); //Allows ui to get and populate patient info
         thePatientDetailsUI.makeVisible();
     }
-    
-    public void populatePatientField(PatientDetailsController patientDetailsController, int rowNum){
-        // Fill this
+
+    public Patient getCurrentPatient() {
+        return currentPatient;
     }
+    
+
     }
