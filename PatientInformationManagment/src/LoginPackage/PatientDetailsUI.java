@@ -486,7 +486,7 @@ public class PatientDetailsUI extends JFrame {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            patientDetailsController.delete();
         }
     }
 

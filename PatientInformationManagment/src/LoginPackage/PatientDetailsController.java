@@ -118,6 +118,27 @@ public class PatientDetailsController {
         thePatientDetailsUI.setVisible(false);
     }
 
+    public void delete() {
+        for(int i = 0; i < patientList.size(); i++) {
+            if(currentPatient.getName().equals(patientList.get(i).getName())) {
+                patientList.remove(i);
+            }
+        }
+
+        try(FileWriter fileClear = new FileWriter(file, false)) { //This clears the file for the Filewriter in Write() Method
+            fileClear.write("");
+            fileClear.close();
+        }
+        catch (IOException x) {
+            System.out.println("An error occurred in clearing file");
+            x.printStackTrace();
+        }
+
+        for(int i = 0; i < patientList.size(); i++) { //Rewrites over file
+            WriteInfo.assembleMap(patientList.get(i));
+        }
+        goBack();
     }
+}
 
     /*On save button, use if statements depending on each login case of what to save */
