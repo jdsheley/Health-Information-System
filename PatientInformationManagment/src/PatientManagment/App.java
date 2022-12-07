@@ -64,6 +64,8 @@ public class App {
         PatientDetailsUI patientDetailUI = new PatientDetailsUI(patientDetailCont);
         tableControl.setDetailController(patientDetailCont);
         patientDetailCont.setThePatientDetailsUI(patientDetailUI);
+        NewPatientView newPatientUI =  new NewPatientView(patientDetailCont);
+        patientDetailCont.setNewPatientUI(newPatientUI);
 
     }
 

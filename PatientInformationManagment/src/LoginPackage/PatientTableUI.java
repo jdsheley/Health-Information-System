@@ -90,9 +90,9 @@ public class PatientTableUI extends JFrame {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            
-            patientTableCntl.addPatient();
-            initialTableComponents();
+            patientTableCntl.showNewPatientUI();
+            // patientTableCntl.addPatient();
+            // initialTableComponents();
         }
         
     }

@@ -40,3 +40,17 @@ username:testuser3
 id:0
 bill:0.0
 /// 
+symptoms:
+bloodPressure:
+password:no
+address:100 Hospital Way
+heartRate:
+name:l
+diagnosis:
+phoneNum:no
+perscription:
+email:no
+username:no
+id:0
+bill:0.0
+/// 

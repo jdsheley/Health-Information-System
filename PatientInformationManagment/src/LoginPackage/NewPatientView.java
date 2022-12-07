@@ -1,5 +1,4 @@
 package LoginPackage;
-
 import javax.swing.*;
 
 import PatientManagment.Patient;
@@ -8,10 +7,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class PatientDetailsUI extends JFrame {
-
+public class NewPatientView {
+    
     private PatientDetailsController patientDetailsController;
-
+    private JFrame frame = new JFrame("New Patient");
     private JPanel panel1, infoPanel, buttonPanel;
     private JButton saveButton = new JButton("Save");
     private JTextField nameTextField = new JTextField();
@@ -21,7 +20,6 @@ public class PatientDetailsUI extends JFrame {
     private JTextField futureAppointmentTextField = new JTextField();
     private JTextField prescriptionTextField = new JTextField();
     private JTextField statusTextField = new JTextField();
-    private JTextField roomTextField = new JTextField();
     private JTextField IDTextField = new JTextField();
     private JTextField billTextField = new JTextField();
     private JTextField insuranceTextFieldTextField = new JTextField();
@@ -33,7 +31,6 @@ public class PatientDetailsUI extends JFrame {
     private JLabel addressLabel = new JLabel("Address");
     private JButton doneButton = new JButton("Done");
     private JButton deletePatientButton = new JButton("Delete");
-    private JLabel nameLabel = new JLabel("Name");
     private JTextField addressTextField = new JTextField();
     private JTextField bloodPressureTextField = new JTextField();
     private JLabel symptomsLabel = new JLabel("Symptoms");
@@ -43,7 +40,6 @@ public class PatientDetailsUI extends JFrame {
     private JLabel prescriptionLabel = new JLabel("Prescription");
     private JLabel statusLabel = new JLabel("Status");
     private JLabel futureAppointmentLabel = new JLabel("Future Appointment");
-    private JLabel roomLabel = new JLabel("Room");
     private JLabel IDLabel = new JLabel("ID");
     private JLabel billLabel = new JLabel("Bill");
     private JLabel insuranceLabel = new JLabel("Insurance");
@@ -52,7 +48,106 @@ public class PatientDetailsUI extends JFrame {
     private JLabel currentLocationLabel = new JLabel("Current Location");
     private JLabel pastPrescriptionsLabel = new JLabel("Past Prescriptions");
     private JLabel pastDiagnosisLabel = new JLabel("Past Diagnosis");
+   
+    private JLabel usernameLabel = new JLabel("Enter a Username");
+    private JTextField usernamTextField = new JTextField();
+    private JLabel passwordLabel = new JLabel("Enter a password");
+    private JTextField passworField = new JTextField();
+    private JLabel emaiLabel = new JLabel("Enter an email");
+    private JTextField emailField = new JTextField();
+    private JLabel phoneLabel = new JLabel("Enter a phone number");
+    private JTextField phoneField = new JTextField();
+    private JLabel nameLabel = new JLabel("Enter name");
+    private JTextField nameField = new JTextField();
     private Patient currentPatient;
+
+    public JLabel getUsernameLabel() {
+        return this.usernameLabel;
+    }
+
+    public void setUsernameLabel(JLabel usernameLabel) {
+        this.usernameLabel = usernameLabel;
+    }
+
+    public JTextField getUsernamTextField() {
+        return this.usernamTextField;
+    }
+
+    public void setUsernamTextField(JTextField usernamTextField) {
+        this.usernamTextField = usernamTextField;
+    }
+
+    public JLabel getPasswordLabel() {
+        return this.passwordLabel;
+    }
+
+    public void setPasswordLabel(JLabel passwordLabel) {
+        this.passwordLabel = passwordLabel;
+    }
+
+    public JTextField getPassworField() {
+        return this.passworField;
+    }
+
+    public void setPassworField(JTextField passworField) {
+        this.passworField = passworField;
+    }
+
+    public JLabel getEmaiLabel() {
+        return this.emaiLabel;
+    }
+
+    public void setEmaiLabel(JLabel emaiLabel) {
+        this.emaiLabel = emaiLabel;
+    }
+
+    public JTextField getEmailField() {
+        return this.emailField;
+    }
+
+    public void setEmailField(JTextField emaField) {
+        this.emailField = emaField;
+    }
+
+    public JLabel getPhoneLabel() {
+        return this.phoneLabel;
+    }
+
+    public void setPhoneLabel(JLabel phoneLabel) {
+        this.phoneLabel = phoneLabel;
+    }
+
+    public JTextField getPhoneField() {
+        return this.phoneField;
+    }
+
+    public void setPhoneField(JTextField phonField) {
+        this.phoneField = phonField;
+    }
+
+    public JLabel getNameLabel() {
+        return this.nameLabel;
+    }
+
+    public void setNameLabel(JLabel nameLabel) {
+        this.nameLabel = nameLabel;
+    }
+
+    public JTextField getNameField() {
+        return this.nameField;
+    }
+
+    public void setNameField(JTextField nameField) {
+        this.nameField = nameField;
+    }
+
+    public Patient getCurrentPatient() {
+        return this.currentPatient;
+    }
+
+    public void setCurrentPatient(Patient currentPatient) {
+        this.currentPatient = currentPatient;
+    }
 
     private JScrollPane scroller;
 
@@ -128,13 +223,7 @@ public class PatientDetailsUI extends JFrame {
         this.statusTextField = statusTextField;
     }
 
-    public JTextField getRoomTextField() {
-        return roomTextField;
-    }
 
-    public void setRoomTextField(JTextField roomTextField) {
-        this.roomTextField = roomTextField;
-    }
 
     public JTextField getIDTextField() {
         return IDTextField;
@@ -224,14 +313,6 @@ public class PatientDetailsUI extends JFrame {
         this.deletePatientButton = deletePatientButton;
     }
 
-    public JLabel getNameLabel() {
-        return nameLabel;
-    }
-
-    public void setNameLabel(JLabel nameLabel) {
-        this.nameLabel = nameLabel;
-    }
-
     public JTextField getAddressTextField() {
         return addressTextField;
     }
@@ -304,14 +385,6 @@ public class PatientDetailsUI extends JFrame {
         this.futureAppointmentLabel = futureAppointmentLabel;
     }
 
-    public JLabel getRoomLabel() {
-        return roomLabel;
-    }
-
-    public void setRoomLabel(JLabel roomLabel) {
-        this.roomLabel = roomLabel;
-    }
-
     public JLabel getIDLabel() {
         return IDLabel;
     }
@@ -376,7 +449,7 @@ public class PatientDetailsUI extends JFrame {
         this.pastDiagnosisLabel = pastDiagnosisLabel;
     }
 
-    public PatientDetailsUI(PatientDetailsController newPatientDetailsController) {
+    public NewPatientView(PatientDetailsController newPatientDetailsController) {
         this.patientDetailsController = newPatientDetailsController;
     }
 
@@ -384,63 +457,43 @@ public class PatientDetailsUI extends JFrame {
         //nameTextField.setText("" + patientDetailsController
     }
 
-    public void setCurrentPatient(Patient currentPatient) {
-        this.currentPatient = currentPatient;
-    }
 
     public void makeVisible() {
         panel1 = new JPanel();
 
         infoPanel = new JPanel(new GridLayout(5, 2));
-        buttonPanel = new JPanel(new GridLayout(1, 4));
+        buttonPanel = new JPanel(new GridLayout(1, 1));
         
         
         infoPanel.add(nameLabel);
-        nameTextField.setText(currentPatient.getName());
         infoPanel.add(nameTextField);
-        infoPanel.add(roomLabel);
-        roomTextField.setText("100");
-        infoPanel.add(roomTextField);
-        infoPanel.add(addressLabel);
-        addressTextField.setText("100 Hospital Way");
-        infoPanel.add(addressTextField);
-        infoPanel.add(IDLabel);
-        IDTextField.setText(Integer.toString(currentPatient.getId()));
-        infoPanel.add(IDTextField);
-        infoPanel.add(symptomsLabel);
-        symptomsTextField.setText(currentPatient.getSymptoms());
-        infoPanel.add(symptomsTextField);
-        infoPanel.add(billLabel);
-        billTextField.setText(Double.toString(currentPatient.getBill()));
-        infoPanel.add(billTextField);
-        infoPanel.add(heartRateLabel);
-        heartRateTextField.setText(currentPatient.getHeartRate());
-        infoPanel.add(heartRateTextField);
-        infoPanel.add(bloodPressureLabel);
-        bloodPressureTextField.setText(currentPatient.getBloodPressure());
-        infoPanel.add(bloodPressureTextField);
-        infoPanel.add(diagnosisLabel);
-        dioagnosisTextField.setText(currentPatient.getDiagnosis());
-        infoPanel.add(dioagnosisTextField);
-        infoPanel.add(prescriptionLabel);
-        prescriptionTextField.setText(currentPatient.getPerscription());
-        infoPanel.add(prescriptionTextField);
+        infoPanel.add(usernameLabel);
+        infoPanel.add(usernamTextField);
+        infoPanel.add(passwordLabel);
+        infoPanel.add(passworField);
+        infoPanel.add(emaiLabel);
+        infoPanel.add(emailField);
+        infoPanel.add(phoneLabel);
+        infoPanel.add(phoneField);
         buttonPanel.add(saveButton);
         saveButton.addActionListener(new SaveButtonListener());
-        buttonPanel.add(deletePatientButton);
-        deletePatientButton.addActionListener(new DeleteButtonListener());
-        buttonPanel.add(doneButton);
-        doneButton.addActionListener(new DoneButtonListener());
-        this.setSize(800, 1000);
-        this.setLocationRelativeTo(null);
-        this.setContentPane(new JPanel(new BorderLayout()));
-        this.getContentPane().add(buttonPanel, BorderLayout.SOUTH);
-        this.getContentPane().add(infoPanel, BorderLayout.CENTER);
-        this.setVisible(true);
+        frame.setSize(800, 1000);
+        frame.setLocationRelativeTo(null);
+        frame.setContentPane(new JPanel(new BorderLayout()));
+        frame.getContentPane().add(buttonPanel, BorderLayout.SOUTH);
+        frame.getContentPane().add(infoPanel, BorderLayout.CENTER);
+        frame.setVisible(true);
 
         panel1.setVisible(true);
         infoPanel.setVisible(true);
 
+    }
+
+    public void close() {
+        frame.setVisible(false);
+        panel1.setVisible(false);
+        infoPanel.setVisible(false);
+        buttonPanel.setVisible(false);
     }
 
     public class SaveButtonListener implements ActionListener {
@@ -448,22 +501,7 @@ public class PatientDetailsUI extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             System.out.println("Test save button");
-            patientDetailsController.savePatientInfo();    
-        }
-    }
-
-    public class DeleteButtonListener implements ActionListener {
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            patientDetailsController.delete();
-        }
-    }
-
-    public class DoneButtonListener implements ActionListener {
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
+            patientDetailsController.makeNewPatient();    
             patientDetailsController.goBack();
         }
     }

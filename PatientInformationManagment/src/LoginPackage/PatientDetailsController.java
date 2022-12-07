@@ -9,6 +9,7 @@ import PatientManagment.*;
 
 public class PatientDetailsController {
     private PatientDetailsUI thePatientDetailsUI;
+    private NewPatientView newPatientView;
     private UserList theUserList;
     private PatientTableController thePatientTableController;
     private PatientTableUI patientTableUI;
@@ -19,6 +20,7 @@ public class PatientDetailsController {
 
     public PatientDetailsController(PatientTableController thePatientTableController, ArrayList<Patient> patientList) {
         this.thePatientTableController = thePatientTableController;
+        //this.newPatientView = newPatientView;
         this.patientList = patientList;
     }
 
@@ -42,6 +44,10 @@ public class PatientDetailsController {
         this.thePatientDetailsUI = thePatientDetailsUI;
     }
 
+    public void setNewPatientUI(NewPatientView newPatientUI) {
+        this.newPatientView = newPatientUI;
+    }
+
     public UserList getTheUserList() {
         return theUserList;
     }
@@ -54,6 +60,10 @@ public class PatientDetailsController {
         thePatientDetailsUI.setCurrentPatient(currentPatient); //Allows ui to get and populate patient info
         thePatientDetailsUI.makeVisible();
         this.currentPatient = currentPatient;
+    }
+
+    public void showNewPatientUI() {
+        newPatientView.makeVisible();
     }
 
     public Patient getCurrentPatient() {
@@ -113,9 +123,31 @@ public class PatientDetailsController {
         }
     }
 
+    public void makeNewPatient() {
+        System.out.println("New button");
+
+        Patient patient = new Patient(newPatientView.getUsernamTextField().getText(), newPatientView.getPassworField().getText(), newPatientView.getEmailField().getText(), newPatientView.getPhoneField().getText(), "patient", newPatientView.getNameField().getText(), 155);
+        System.out.println(patient.getName());
+        patientList.add(patient);
+       
+            try(FileWriter fileClear = new FileWriter(file, false)) { //This clears the file for the Filewriter in Write() Method
+                fileClear.write("");
+                fileClear.close();
+            }
+            catch (IOException x) {
+                System.out.println("An error occurred in clearing file");
+                x.printStackTrace();
+            }
+
+            for(int i = 0; i < patientList.size(); i++) { //Rewrites over file
+                WriteInfo.assembleMap(patientList.get(i));
+            }
+    }
+
     public void goBack() {
         thePatientTableController.show(patientTableUI);
         thePatientDetailsUI.setVisible(false);
+        newPatientView.close();
     }
 
     public void delete() {

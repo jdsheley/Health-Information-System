@@ -20,7 +20,6 @@ public class PatientTableController {
     private ArrayList<Patient> patientList;
     private File file;
     private PatientDetailsController detailController;
-    private LoginController loginController;
     private String userType; 
     private User currentUser;
 
@@ -121,6 +120,11 @@ public class PatientTableController {
             }
         }
         detailController.showPatientDetailsUI(currentPatient);
+        patientTableUI.setVisible(false);
+    }
+
+    public void showNewPatientUI() {
+        detailController.showNewPatientUI();
         patientTableUI.setVisible(false);
     }
 
