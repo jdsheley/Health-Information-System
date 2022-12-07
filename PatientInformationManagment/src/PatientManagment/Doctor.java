@@ -9,7 +9,7 @@ public class Doctor extends Employee{
     private ArrayList<Date> futureAppointments;
     UserInput userIntput = new UserInput();
     
-    public Doctor(String username, String password, String email, String phoneNum, UserType type, String name, int empID, Location location) {
+    public Doctor(String username, String password, String email, String phoneNum, String type, String name, int empID, Location location) {
         super(username, password, email, phoneNum, type, name, empID, location); 
     }
 

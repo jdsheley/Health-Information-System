@@ -4,7 +4,7 @@ import LocationPackage.*;
     *This class is located at a pharmacy or hospital, and can view perscriptions and edit them */
 public class Pharm extends User{
 
-    public Pharm(String username, String password, String email, String phoneNum, UserType type, String name, int empID, Location location) {
+    public Pharm(String username, String password, String email, String phoneNum, String type, String name, int empID, Location location) {
         super(username, password, email, phoneNum, type, name);
         //TODO Auto-generated constructor stub
     }

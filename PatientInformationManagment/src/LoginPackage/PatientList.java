@@ -16,7 +16,7 @@ public class PatientList {
     // add only users that are patients to the patient list
     public void formPatientList() {
         for (int i = 0; i < listOfPatients.size(); i++) {
-            if (listOfUsers.getSpecificUser(i).getType() == UserType.Patient) {
+            if (listOfUsers.getSpecificUser(i).getType().equals("patient")) {
                 listOfPatients.add(listOfUsers.getSpecificUser(i));
             }
         }

@@ -7,7 +7,7 @@ public class Insurance extends Employee{
    
     private ArrayList<Patient> patientList; // List of users with insurance
     
-    public Insurance(String username, String password, String email, String phoneNum, UserType type, String name, int empID, Location location) {
+    public Insurance(String username, String password, String email, String phoneNum, String type, String name, int empID, Location location) {
         super(username, password, email, phoneNum, type, name, empID, location);
     }
     

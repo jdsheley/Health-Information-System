@@ -40,7 +40,7 @@ public class ReadInfo {
                 }
 
                 if(keyPair.contains("///")) { //Create patient herell
-                    Patient currentPatient = new Patient("", "", "", "", UserType.Patient, "", 0);
+                    Patient currentPatient = new Patient("", "", "", "", "patient", "", 0);
 
                     for(int i = 0; i < keyList.size(); i++) {
                         switch(keyList.get(i)) {

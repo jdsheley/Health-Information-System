@@ -29,7 +29,7 @@ public class Patient extends User{
     
     
     
-    public Patient(String username, String password, String email, String phoneNum, UserType type, String name, int id) {
+    public Patient(String username, String password, String email, String phoneNum, String type, String name, int id) {
         super(username, password, email, phoneNum, type, name);
         
     }

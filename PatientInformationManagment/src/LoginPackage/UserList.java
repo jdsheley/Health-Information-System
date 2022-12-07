@@ -21,11 +21,11 @@ public class UserList {
 
     public void createUserList(ArrayList<Patient> patientList){
 
-        Nurse u1 = new Nurse("nurse", "password", "nurse@psu.edu", "2157206172", UserType.Nurse, "Joe White", 1234, testLoc);
+        Nurse u1 = new Nurse("nurse", "password", "nurse@psu.edu", "2157206172", "nurse", "Joe White", 1234, testLoc);
         listOfUsers.add(u1);
-        Doctor u2 = new Doctor("doctor", "password", "doctor@psu.edu", "1234567890", UserType.Doctor, "John Smith", 1234, testLoc);
+        Doctor u2 = new Doctor("doctor", "password", "doctor@psu.edu", "1234567890", "doctor", "John Smith", 1234, testLoc);
         listOfUsers.add(u2);
-        Secretary u3 = new Secretary("secretary", "password2", "mary@psu.edu", "0987654321", UserType.Patient, "Mary Williams", 1234, testLoc);
+        Secretary u3 = new Secretary("secretary", "password2", "mary@psu.edu", "0987654321", "secretary", "Mary Williams", 1234, testLoc);
         listOfUsers.add(u3);
 
         for(int i = 0; i < patientList.size(); i++) {

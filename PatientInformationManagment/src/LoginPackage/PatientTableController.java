@@ -20,6 +20,9 @@ public class PatientTableController {
     private ArrayList<Patient> patientList;
     private File file;
     private PatientDetailsController detailController;
+    private LoginController loginController;
+    private String userType; 
+    private User currentUser;
 
 
 
@@ -29,9 +32,20 @@ public class PatientTableController {
         return patientTableUI;
     }
 
-    public PatientTableController(){
-        thePatientList = new PatientList();
-        //patientTableUI = new PatientTableUI(this);
+    public void setUserType(String usertype) {
+        this.userType = usertype;
+    }
+
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setCurrentUser(User currentUser) {
+        this.currentUser = currentUser;
+    }
+
+    public User getCurrentUser() {
+        return currentUser;
     }
 
     public void setFile(File file) {
@@ -44,7 +58,7 @@ public class PatientTableController {
             //Creates a new patient. Also might display the new patient at some point, once I decide where to implement that.
 
             //This line creates a new patient with hardcoded info. Someone needs to make a UI that allows the user to input the info instead.
-            Patient patient = new Patient("testuser3", "password", "abc@123.com", "1231231234", UserType.Patient, "Jeff", 0);
+            Patient patient = new Patient("testuser3", "password", "abc@123.com", "1231231234", "patient", "Jeff", 0);
             patientList.add(patient);
        
             try(FileWriter fileClear = new FileWriter(file, false)) { //This clears the file for the Filewriter in Write() Method
@@ -95,22 +109,19 @@ public class PatientTableController {
     }
 
 
-    public void getSelectedPatient(String patientName) {
+    public void getSelectedPatient(String patientName, ArrayList<Patient> patientListIn) {
 
-        System.out.println(patientList.size());
+        System.out.println(patientListIn.size());
         
             System.out.println("Before if statement");
-            for(int i = 0; i < patientList.size(); i++) {
-                System.out.println("After for");
-                if(patientName.equals(patientList.get(i).getName())) {
-                    currentPatient = patientList.get(i);
+            for(int i = 0; i < patientListIn.size(); i++) {
+                if(patientName.equals(patientListIn.get(i).getName())) {
+                    currentPatient = patientListIn.get(i);
                     System.out.println(currentPatient.getName());
             }
-            detailController.showPatientDetailsUI(currentPatient);
-            patientTableUI.setVisible(false);
         }
-
-
+        detailController.showPatientDetailsUI(currentPatient);
+        patientTableUI.setVisible(false);
     }
 
     public Patient getCurrentPatient() {

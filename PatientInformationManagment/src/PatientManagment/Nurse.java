@@ -8,7 +8,7 @@ public class Nurse  extends Employee{
     
     UserInput input = new UserInput();
 
-    public Nurse(String username, String password, String email, String phoneNum, UserType type, String name, int empID,
+    public Nurse(String username, String password, String email, String phoneNum, String type, String name, int empID,
             Location location) {
         super(username, password, email, phoneNum, type, name, empID, location);
     }

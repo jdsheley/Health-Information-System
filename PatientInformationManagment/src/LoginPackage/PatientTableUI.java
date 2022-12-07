@@ -19,6 +19,7 @@ public class PatientTableUI extends JFrame {
 
     public PatientTableUI(PatientTableController patientTableCntl, ArrayList<Patient> patientList) {
         this.patientTableCntl = patientTableCntl;
+        this.patientList = patientList;
         //initialTableComponents();
 
     }
@@ -80,7 +81,8 @@ public class PatientTableUI extends JFrame {
             int column = 0;
             int row = patientTable.getSelectedRow();
             String name = patientTable.getModel().getValueAt(row, column).toString();
-            patientTableCntl.getSelectedPatient(name);
+            System.out.println(name);
+            patientTableCntl.getSelectedPatient(name, patientList);
         }
     }
 

@@ -377,7 +377,7 @@ public class PatientDetailsUI extends JFrame {
     }
 
     public PatientDetailsUI(PatientDetailsController newPatientDetailsController) {
-
+        this.patientDetailsController = newPatientDetailsController;
     }
 
     public void populatePatientField(int selectedRow, PatientDetailsController patientDetailsController) {
@@ -442,8 +442,11 @@ public class PatientDetailsUI extends JFrame {
         // infoPanel.add(pastDiagnosisLabel);
         // infoPanel.add(pastDiagnosisTextField);
         buttonPanel.add(saveButton);
+        saveButton.addActionListener(new SaveButtonListener());
         buttonPanel.add(deletePatientButton);
+        deletePatientButton.addActionListener(new DeleteButtonListener());
         buttonPanel.add(doneButton);
+        doneButton.addActionListener(new DoneButtonListener());
         //scroller = new JScrollPane(panel1);
         //scroller.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         //scroller.setPreferredSize(new Dimension(500, 400));
@@ -474,7 +477,8 @@ public class PatientDetailsUI extends JFrame {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            System.out.println("Test save button");
+            patientDetailsController.savePatientInfo();    
         }
     }
 
@@ -490,7 +494,7 @@ public class PatientDetailsUI extends JFrame {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            patientDetailsController.goBack();
         }
     }
 }

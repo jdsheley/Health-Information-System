@@ -6,7 +6,7 @@ import LocationPackage.*;
     *This class can add appointments, add patients to the system, and change the status of the patient */
 public class Secretary extends Employee{
  
-    public Secretary(String username, String password, String email, String phoneNum, UserType type, String name,
+    public Secretary(String username, String password, String email, String phoneNum, String type, String name,
             int empID, Location location) {
         super(username, password, email, phoneNum, type, name, empID, location);
 

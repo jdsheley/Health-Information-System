@@ -6,10 +6,10 @@ public class User {
     protected String password;
     protected String email;
     protected String phoneNum;
-    protected UserType type;
+    protected String type;
     protected String name;
     
-    public User(String username, String password, String email, String phoneNum, UserType type, String name) {
+    public User(String username, String password, String email, String phoneNum, String type2 , String name) {
         this.username = username;
         this.password = password;
         this.email = email;
@@ -100,7 +100,7 @@ public class User {
     /** 
      * @return UserType
      */
-    public UserType getType() {
+    public String getType() {
         return this.type;
     }
 
@@ -108,7 +108,7 @@ public class User {
     /** 
      * @param type
      */
-    public void setType(UserType type) {
+    public void setType(String type) {
         this.type = type;
     }
 

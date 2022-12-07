@@ -19,6 +19,7 @@ public class LoginUI extends JFrame{
     JLabel captchaLabel = new JLabel("Captcha: McoWxBAz");
     JButton verifyButton = new JButton("Verify Captcha");
     LoginController loginController;
+    String currentUserType;
 
     public LoginUI(LoginController loginController) {
         this.loginController = loginController;
@@ -74,10 +75,15 @@ public class LoginUI extends JFrame{
         frame.setVisible(false);
     }
 
+    public String getCurrentUserType() {
+        return currentUserType;
+    }
+
     class OpenListPage implements ActionListener{
         public void actionPerformed(ActionEvent e) {
             loginController.requestAuthenticate(textUsername.getText(), textPassword.getText());
             System.out.println("Login action listener");
+            currentUserType = loginController.getUserType();
         }
      }	
 }

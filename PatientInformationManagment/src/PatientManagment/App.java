@@ -24,8 +24,8 @@ public class App {
         ArrayList<Secretary> secList = new ArrayList<>();
         ArrayList<Pharm> pharmList = new ArrayList<>();
         Location testLoc = new Location("testHospital", LocationType.Hospital, "testH", rooms, pList, nurseList , doctorList, secList, pharmList); 
-        Patient testPatient = new Patient("testP", "testP", "testPEmail", "123456789", UserType.Patient, "TestP", 123);
-        Patient testPatient2 = new Patient("testP2", "test2P", "testP2Email", "123456789", UserType.Patient, "TestP2", 1234);
+        Patient testPatient = new Patient("testP", "testP", "testPEmail", "123456789", "patient", "TestP", 123);
+        Patient testPatient2 = new Patient("testP2", "test2P", "testP2Email", "123456789", "patient", "TestP2", 1234);
         File output = new File("../PatientInfo.txt");
         ArrayList<Patient> patientList = new ArrayList<>();
         patientList.add(testPatient);
@@ -58,13 +58,12 @@ public class App {
         tableControl.setFile(output);
         loginController.setController(tableControl);
         loginController.setTableUI(tableUI);
-        PatientDetailsController patientDetailCont = new PatientDetailsController(tableControl);
+        PatientDetailsController patientDetailCont = new PatientDetailsController(tableControl, patientList);
+        patientDetailCont.setFile(output);
+        patientDetailCont.setTableUI(tableUI);
         PatientDetailsUI patientDetailUI = new PatientDetailsUI(patientDetailCont);
         tableControl.setDetailController(patientDetailCont);
         patientDetailCont.setThePatientDetailsUI(patientDetailUI);
-        //patientDetailCont.showPatientDetailsUI();
-
-        // tableControl.show();
 
     }
 
