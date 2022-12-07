@@ -1,33 +1,5 @@
 symptoms:null
 bloodPressure:null
-password:test2P
-address:100 Hospital Way
-heartRate:null
-name:TestP2
-diagnosis:123456789
-phoneNum:123456789
-perscription:null
-email:testP2Email
-username:testP2
-id:0
-bill:0.0
-/// 
-symptoms:null
-bloodPressure:null
-password:testP
-address:100 Hospital Way
-heartRate:null
-name:New Name
-diagnosis:123456789
-phoneNum:123456789
-perscription:null
-email:testPEmail
-username:testP
-id:0
-bill:0.0
-/// 
-symptoms:null
-bloodPressure:null
 password:password
 address:null
 heartRate:null
@@ -42,15 +14,29 @@ bill:0.0
 /// 
 symptoms:
 bloodPressure:
-password:no
+password:password
 address:100 Hospital Way
 heartRate:
-name:l
+name:test1
+diagnosis:1234567890
+phoneNum:1234567890
+perscription:null
+email:test1@psu.edu
+username:test1
+id:0
+bill:0.0
+/// 
+symptoms:
+bloodPressure:
+password:password
+address:100 Hospital Way
+heartRate:
+name:test2
 diagnosis:
-phoneNum:no
+phoneNum:1234567890
 perscription:
-email:no
-username:no
+email:test2@psu.edu
+username:test2
 id:0
 bill:0.0
 /// 

@@ -463,8 +463,6 @@ public class NewPatientView {
 
         infoPanel = new JPanel(new GridLayout(5, 2));
         buttonPanel = new JPanel(new GridLayout(1, 1));
-        
-        
         infoPanel.add(nameLabel);
         infoPanel.add(nameTextField);
         infoPanel.add(usernameLabel);
@@ -499,10 +497,10 @@ public class NewPatientView {
     public class SaveButtonListener implements ActionListener {
 
         @Override
-        public void actionPerformed(ActionEvent e) {
-            System.out.println("Test save button");
+        public void actionPerformed(ActionEvent e) {;
             patientDetailsController.makeNewPatient();    
             patientDetailsController.goBack();
+            System.out.println(nameField.getText());
         }
     }
 }

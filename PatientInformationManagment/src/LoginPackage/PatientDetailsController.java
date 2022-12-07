@@ -4,6 +4,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.swing.JTextField;
+
 import PatientInformationPackage.*;
 import PatientManagment.*;
 
@@ -123,9 +125,23 @@ public class PatientDetailsController {
         }
     }
 
-    public void makeNewPatient() {
-        System.out.println("New button");
+    public boolean checkLength() {
+        boolean pLength = false;
+        
+            if(newPatientView.getPassworField().getText().length() >= 8){
+                pLength = true;
+                return pLength;
+            }
+            else {
+                System.out.println("Password must be at least 8 characters long");
+                return pLength;
+        }
+    }
 
+    public void makeNewPatient() {
+
+        if(checkLength() == true) {
+        System.out.println(newPatientView.getNameField().getText());
         Patient patient = new Patient(newPatientView.getUsernamTextField().getText(), newPatientView.getPassworField().getText(), newPatientView.getEmailField().getText(), newPatientView.getPhoneField().getText(), "patient", newPatientView.getNameField().getText(), 155);
         System.out.println(patient.getName());
         patientList.add(patient);
@@ -142,6 +158,7 @@ public class PatientDetailsController {
             for(int i = 0; i < patientList.size(); i++) { //Rewrites over file
                 WriteInfo.assembleMap(patientList.get(i));
             }
+        }
     }
 
     public void goBack() {
